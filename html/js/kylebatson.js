@@ -92,10 +92,10 @@ $(document).ready(function(){
 
 	var generateOverlayControls = function(){
 		$("#overlayControls").html(""); //Clear out old 
-		if($(sourceLink).prev().length){
+		if($(sourceLink).parent('li').prev().length){
 			$("#overlayControls").append("<a href='#' id='prevItem'>Previous Item</a>");
 		}
-		if($(sourceLink).next().length){
+		if($(sourceLink).parent('li').next().length){
 			$("#overlayControls").append("<a href='#' id='nextItem'>Next Item</a>");
 		}
 	}
@@ -103,11 +103,11 @@ $(document).ready(function(){
 	//** Navigate Overlay **//
 	$("#overlayControls").on('click', 'a', function(){
 		if($(this).attr("id") == "nextItem"){
-			portfolioURL = $(sourceLink).next().attr("href");
-			sourceLink = $(sourceLink).next();
+			portfolioURL = $(sourceLink).parent('li').next().find('a').attr("href");
+			sourceLink = $(sourceLink).parent().next().find('a');
 		} else {
-			portfolioURL = $(sourceLink).prev().attr("href");
-			sourceLink = $(sourceLink).prev();
+			portfolioURL = $(sourceLink).parent('li').prev().find('a').attr("href");
+			sourceLink = $(sourceLink).parent().prev().find('a');
 		}
 		
 		closeOverlay();
@@ -166,7 +166,7 @@ $(document).ready(function(){
 	});
 */
 
-	$(".portfolioLink").on('click', function(){
+	$(".portfolioLink a").on('click', function(){
 		sourceLink = $(this);
 		portfolioURL = $(this).attr("href");
 		openOverlay(portfolioURL);

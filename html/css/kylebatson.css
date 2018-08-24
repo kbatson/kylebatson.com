@@ -247,7 +247,7 @@ section#portfolio .sectionContent ul {
 	padding: 0;
 }
 
-a.portfolioLink {
+.portfolioLink {
 	display: block;
 	flex: 1;
 	justify-self: stretch;
@@ -256,11 +256,7 @@ a.portfolioLink {
 /* 	border: 2px solid black; */
 }
 
-a.portfolioLink:hover {
-	border-color: orangered;
-}
-
-a.portfolioLink img {
+.portfolioLink img {
 	max-width: 100%;
 }
 
@@ -456,22 +452,29 @@ footer nav ul li {
 
 #overlay .closeButton:hover {
 	border: none;
-	color: black;
+	color: white;
 }
 
 #overlay .closeButton:after {
 	display: block;
-	height: 1.2rem;
-	width: 1.2rem;
+	content: "\000D7";
+	height: 2rem;
+	width: 2rem;
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 2.2rem;
+	font-size: 2rem;
+	line-height: 2rem;
 	background: white;
 	border-radius: 1rem;
-	text-align: right;
+	text-align: center;
 	text-indent: -.2rem;
-	content: "\02297";
+	box-sizing: border-box;
+	padding-left: .2rem;
+}
+
+#overlay .closeButton:hover:after {
+	background: orangered;
 }
 
 #overlayControls {
