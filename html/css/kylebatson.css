@@ -1,0 +1,607 @@
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	line-height: 1rem;
+}
+
+body {
+/* 	font-family: museo-sans, Helvetica, Arial, sans-serif; */
+	font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
+/* 	font-family: "freight-sans-pro", Helvetica, Arial, sans-serif; */
+	font-size: .8rem;
+	font-weight: 300;
+	position: relative;
+	
+	/* Grid Layout */
+	display: grid;
+	grid-template-rows: repeat(3, minmax(3rem, auto));
+	grid-template-columns: auto auto auto;
+	grid-gap: 1rem;
+}
+
+body.hasOverlay {
+	overflow: hidden;
+	height: 100vh;
+}
+
+body.baseline {
+	background: #fff;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 1px;
+/*
+  background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+  background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+  background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+  background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+*/
+  background: linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+/*
+  -webkit-background-size: 100% 15px;
+  -moz-background-size: 100% 15px;
+  -ms-background-size: 100% 15px;
+  -o-background-size: 100% 15px;
+*/
+  background-size: 100% 1rem;
+  
+}
+
+p {
+/* 	line-height: 1rem; */
+	margin: 1rem 0;
+}
+
+a {
+	color: orangered;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+a:hover {
+	border-color: orangered;
+}
+
+strong {
+	font-weight: 700;
+}
+
+header {
+	display: grid;
+	grid-row: 1;
+	grid-column: 2;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 1rem;
+}
+
+h1 {
+	font-weight: 100;
+	font-size: 1rem;
+	text-transform: uppercase;
+	grid-column: 1;
+	margin: 0;
+	align-self: end;
+}
+
+p#contact {
+	align-self: end;
+	margin: 0;
+}
+
+header nav {
+	grid-column: 2;
+	justify-self: end;
+	align-self: end;
+/* 	display: none; */
+}
+
+header nav ul {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li {
+	text-align: right;
+	margin-left: 1rem;
+	white-space: nowrap;
+	line-height: 1rem;
+/* 	text-transform: uppercase; */
+	font-size: .8rem;
+	font-weight: 100;
+}
+
+header nav ul li:first-child {
+	margin-right: 0;
+}
+
+@media (max-width: 900px) {
+	header nav ul {
+		display: block;
+		justify-content: unset;
+		flex-wrap: nowrap;
+	}
+	
+	header nav ul li {
+		display: block;
+	}
+}
+
+main {
+	grid-row: 2;
+	grid-column: 2;
+	
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas:
+		"intro skills"
+		"intro resume"
+		"portfolio portfolio";
+	grid-gap: 1rem;
+}
+
+main#portfolioItem {
+	display: block;
+}
+
+section {
+	display: grid;
+	grid-template-rows: 1rem 3rem auto;
+	grid-gap: 1rem;
+}
+
+section h2 {
+	font-family: "ltc-bodoni-175", "Times New Roman", serif;
+	grid-row: 2;
+	font-weight: 100;
+	font-size: 2rem;
+	line-height: 2rem;
+	padding-top: .2rem; /* To align better on baseline */
+	text-transform: uppercase;
+	margin: 0;
+	position: relative;
+	border-top: 3px solid black;
+}
+
+h3 {
+	margin-top: 0;
+}
+
+section p:first-child {
+
+}
+
+.sectionContent {
+	grid-row: 3;
+	grid-gap: 1rem;
+}
+
+/** Intro START **/
+section#intro {
+	grid-row: span 2;
+}
+#profilePhoto {
+	float: right;
+	margin: 1rem;
+	width: 50%;
+	height: auto;
+}
+
+#profilePhoto:first-child {
+	margin-top: 0;
+}
+
+.alignRight {
+	margin-right: 0 !important;
+}
+
+.alignLeft {
+	margin-left: 0;
+}
+/** Intro END **/
+
+/** Portfolio START **/
+section#portfolio {
+	grid-area: portfolio;
+	grid-template-rows: 1rem minmax(3rem, auto) auto;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+section#portfolio h2 {
+	grid-row: 2;
+	grid-column: 1 / span 2;
+}
+
+section#portfolio p {
+	grid-row: 2;
+	grid-column: 2;
+}
+
+section#portfolio .sectionContent {
+	display: grid;
+	grid-row: 4;
+	grid-column: 1 / span 2;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	grid-gap: 1rem;
+/*
+	word-wrap: break-word;
+	
+	display: flex;
+	justify-content: stretch;
+	flex-wrap: wrap;
+	margin: -.5rem;
+	*/
+}
+
+a.portfolioLink {
+	display: block;
+	flex: 1;
+	justify-self: stretch;
+	height: 100%;
+	border: none;
+/* 	border: 2px solid black; */
+}
+
+a.portfolioLink:hover {
+	border-color: orangered;
+}
+
+a.portfolioLink img {
+	max-width: 100%;
+}
+
+.portfolioItem-content {
+	background: #ffffff;
+	padding: 1rem;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.portfolioItem-content h3 {
+	font-family: "ltc-bodoni-175", "Times New Roman", serif;
+	border-top: 2px solid black;
+	padding-top: .2rem;
+}
+
+.portfolioItem-details {
+	grid-area: content;
+	display: block;
+}
+
+.portfolioExternalLink {
+	display: block;
+	margin-top: -1rem;
+}
+
+/** Portfolio END **/
+
+/** Skills START **/
+section#skills {
+	grid-area: skills;
+}
+
+section#skills .sectionContent {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+	grid-gap: 1rem;
+	align-content: start;
+}
+
+.skillSection h3 {
+	margin-top: -1rem;
+}
+
+.skillSection ul {
+	margin: 0 0 1rem 1rem;
+	padding: 0;
+}
+/** Skills END **/
+
+section#resume {
+	grid-area: resume;
+}
+
+#resumeDownload, #email {
+	position: relative;
+	margin-left: 1.3rem;
+	display: inline-block;
+}
+
+#resumeDownload:after, #email:after {
+	content: " ";
+	display: block;
+	height: 1rem;
+	width: 1rem;
+	position: absolute;
+	top: 0;
+	left: -1.3rem;
+}
+
+#resumeDownload:after {
+	background: url(../images/downloadPDF.svg) center;
+}
+
+#email:after {
+	background: url(../images/email.svg) center;
+}
+
+section#contact {
+	grid-column: 7 / span 6;
+	grid-row: 3;
+}
+
+footer {
+	grid-row: 3;
+	grid-column: 2;
+	border-top: 1px solid black;
+	padding: 1rem 0 2rem 0;
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+footer nav {
+	grid-column: 1;
+}
+
+footer nav ul {
+/*
+	display: flex;
+	justify-content: space-between;
+*/
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+footer nav ul li {
+	
+}
+
+#link-instagram, #link-photography, #link-desirepath {
+	display: inline-block;
+	position: relative;
+/* 	margin-left: 1.2rem; */
+}
+
+/*
+#link-instagram:before, #link-photography:before, #link-desirepath:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -1.2rem;
+	width: 1rem;
+	height: 1rem;
+	background-size: 1rem 1rem;
+}
+*/
+
+#link-instagram:before {
+	background-image: url(../images/instagram.svg);
+}
+
+#link-photography:before {
+	background-image: url(../images/kylebatsonphoto.svg);
+}
+
+#link-desirepath:before {
+	background-image: url(../images/desirepath.svg);
+}
+
+#copyright {
+	grid-column: 2;
+	margin: 0;
+}
+
+@media(max-width: 600px){
+	main {
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			"intro"
+			"skills"
+			"resume"
+			"portfolio";
+	}
+	
+	section#intro {
+		grid-row: unset;
+	}
+}
+
+/** Overlay START **/
+#overlay {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 1rem;
+	overflow: scroll;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.6);
+	justify-content: center;
+
+	grid-template-columns: minmax(5vw, auto) 40rem minmax(5vw, auto);
+	grid-template-areas:
+		"left content right";
+}
+
+#overlay .closeButton {
+	height: 2rem;
+	width: 2rem;
+	grid-area: right;
+	z-index: 1;
+	text-indent: -999em;
+	position: relative;
+}
+
+#overlay .closeButton:hover {
+	border: none;
+	color: black;
+}
+
+#overlay .closeButton:after {
+	display: block;
+	height: 1.2rem;
+	width: 1.2rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 2.2rem;
+	background: white;
+	border-radius: 1rem;
+	text-align: right;
+	text-indent: -.2rem;
+	content: "\02297";
+}
+
+#overlayControls {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 1;
+	display: grid;
+	pointer-events: none;
+	cursor: default;
+	grid-template-columns: minmax(5vw, auto) 40rem minmax(5vw, auto);
+	grid-template-areas:
+		"left center right";
+	align-content: center;
+}
+
+#overlayControls a {
+	display: inline-block;
+	height: 0;
+	width: 0;
+	border: 25vh solid transparent;
+	justify-self: center;
+	text-indent: -999em;
+	pointer-events: all;
+	cursor: pointer;
+}
+
+#overlayControls a#prevItem {
+	grid-area: left;
+	border-width: 5vh 4vw 5vh 0px;
+	border-right-color: white;
+}
+
+#overlayControls a#nextItem {
+	grid-area: right;
+	border-width: 5vh 0 5vh 4vw;
+	border-left-color: white;
+}
+
+#overlayControls a#prevItem:hover {
+	border-right-color: orangered;
+}
+
+#overlayControls a#nextItem:hover {
+	border-left-color: orangered;
+}
+
+@media (max-width: 850px){
+	#overlay, #overlayControls {
+		grid-template-columns: 5vw 90vw 5vw;
+	}
+	
+	#overlayControls a#prevItem {
+		border-width: 5vh 4vw 5vh 0px;
+	}
+	
+	#overlayControls a#nextItem {
+		border-width: 5vh 0 5vh 4vw;
+	}
+}
+
+/** Overlay END **/
+
+/** Slideshow START **/
+.slideshow {
+	margin: auto;
+	background: #ffffff;
+}
+
+.slideshowWrapper {
+	width: inherit;
+	overflow: hidden;
+	position: relative;
+}
+
+.slideshowContent {
+	width: 400%;
+	height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	transition: left .5s ease-in;
+	display: flex;
+}
+
+.slide {
+	cursor: pointer;
+}
+
+.slide img {
+	width: 100%;
+}
+
+.slideshowControls {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.slideControl {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	text-indent: -999em;
+	border-radius: 10px;
+	position: relative;
+	border: none;
+}
+
+.slideControl:before {
+	position: absolute;
+	content: " ";
+	top: 5px;
+	left: 5px;
+	height: 10px;
+	width: 10px;
+	border-radius: 5px;
+	display: block;
+	background: orangered;
+}
+
+.slideControl:hover:before {
+	background: black;
+}
+
+.slideControl.active:after {
+	position: absolute;
+	display: block;
+	content: " ";
+	height: 20px;
+	width: 20px;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	border: 2px solid black;
+	border-radius: 20px;
+}
+/** Slideshown END **/
