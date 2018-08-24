@@ -443,7 +443,7 @@ footer nav ul li {
 
 #overlay .closeButton {
 	height: 2rem;
-	width: 2rem;
+	width: 100%;
 	grid-area: right;
 	z-index: 1;
 	text-indent: -999em;
