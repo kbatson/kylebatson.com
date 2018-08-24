@@ -224,11 +224,10 @@ section#portfolio p {
 }
 
 section#portfolio .sectionContent {
-	display: grid;
+	
 	grid-row: 4;
 	grid-column: 1 / span 2;
-	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-	grid-gap: 1rem;
+	
 /*
 	word-wrap: break-word;
 	
@@ -237,6 +236,15 @@ section#portfolio .sectionContent {
 	flex-wrap: wrap;
 	margin: -.5rem;
 	*/
+}
+
+section#portfolio .sectionContent ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	grid-gap: 1rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 a.portfolioLink {
