@@ -46,56 +46,6 @@ body.baseline {
   
 }
 
-body.night {
-	background: linear-gradient(#113f68 0%, #f0959a 100%) fixed;
-	background-size: 100vw 100vh;
-	color: white;
-}
-
-.night h2 {
-	border-color: white;
-}
-
-.night a {
-	color: #f0959a;
-}
-
-.night a:hover {
-	border-color: #f0959a;
-}
-
-.night footer a {
-	color: #113f68;
-}
-
-.night footer a:hover {
-	border-color: #113f68;
-}
-
-.night a#email:hover {
-	color: white !important;
-}
-
-.night #email:after {
-	filter: brightness(1.4) sepia(1) hue-rotate(-50deg) saturate(3.5);
-}
-
-.night #email:hover:after {
-	filter: brightness(2);
-}
-
-.night #resumeDownload:hover {
-	background: #f0959a;
-}
-
-.night #resumeDownload:after {
-	filter: brightness(1.4) sepia(1) hue-rotate(-50deg) saturate(3.5);
-}
-
-.night #nightToggle {
-	filter: brightness(.75) sepia(1) hue-rotate(-50deg) saturate(2);
-}
-
 p {
 /* 	line-height: 1rem; */
 	margin: 1rem 0;
@@ -524,6 +474,59 @@ footer nav ul li {
 		grid-row: unset;
 	}
 }
+
+/** Night START **/
+body.night, .night .portfolioItem-content {
+	background: linear-gradient(#113f68 0%, #f0959a 100%) fixed;
+	background-size: 100vw 100vh;
+	color: white;
+}
+
+.night h2 {
+	border-color: white;
+}
+
+.night a {
+	color: #f0959a;
+}
+
+.night a:hover {
+	border-color: #f0959a;
+}
+
+.night footer a {
+	color: #113f68;
+}
+
+.night footer a:hover {
+	border-color: #113f68;
+}
+
+.night a#email:hover {
+	color: white !important;
+}
+
+.night #email:after {
+	filter: brightness(1.4) sepia(1) hue-rotate(-50deg) saturate(3.5);
+}
+
+.night #email:hover:after {
+	filter: brightness(2);
+}
+
+.night #resumeDownload:hover {
+	background: #f0959a;
+}
+
+.night #resumeDownload:after {
+	filter: brightness(1.4) sepia(1) hue-rotate(-50deg) saturate(3.5);
+}
+
+.night #nightToggle {
+	filter: brightness(.75) sepia(1) hue-rotate(-50deg) saturate(2);
+}
+
+/** Night END **/
 
 /** Overlay START **/
 #overlay {
