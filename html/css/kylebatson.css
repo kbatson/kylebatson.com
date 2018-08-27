@@ -454,7 +454,7 @@ footer nav ul li {
 	background-image: url(../images/desirepath.svg);
 }
 
-#copyright {
+#copyright, #github {
 	grid-column: 2;
 	margin: 0;
 }
