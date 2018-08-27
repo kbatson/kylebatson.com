@@ -550,12 +550,13 @@ body.night, .night .portfolioItem-content {
 }
 
 #overlay .closeButton {
-	height: 2rem;
+	height: 2.2rem;
 	width: 100%;
 	grid-area: right;
 	z-index: 1;
 	text-indent: -999em;
 	position: relative;
+	overflow: hidden;
 }
 
 #overlay .closeButton:hover {
@@ -611,6 +612,7 @@ body.night, .night .portfolioItem-content {
 	text-indent: -999em;
 	pointer-events: all;
 	cursor: pointer;
+	overflow: auto;
 }
 
 #overlayControls a#prevItem {
@@ -693,6 +695,7 @@ body.night, .night .portfolioItem-content {
 	border-radius: 10px;
 	position: relative;
 	border: none;
+	overflow: auto;
 }
 
 .slideControl:before {
