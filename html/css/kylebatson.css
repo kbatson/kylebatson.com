@@ -23,7 +23,6 @@ body {
 
 body.hasOverlay {
 	overflow: hidden;
-	height: 100vh;
 }
 
 body.baseline {
