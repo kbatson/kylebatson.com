@@ -604,33 +604,53 @@ body.night, .night .portfolioItem-content {
 
 #overlayControls a {
 	display: inline-block;
-	height: 0;
-	width: 0;
-	border: 25vh solid transparent;
+	height: 25vh;
+	width: 100%;
 	justify-self: center;
 	text-indent: -999em;
 	pointer-events: all;
 	cursor: pointer;
 	overflow: auto;
+	position: relative;
 }
 
 #overlayControls a#prevItem {
 	grid-area: left;
-	border-width: 5vh 4vw 5vh 0px;
-	border-right-color: white;
 }
 
 #overlayControls a#nextItem {
 	grid-area: right;
+}
+
+#overlayControls a:after {
+	display: block;
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -2vw;
+	border: 25vh solid transparent;
+}
+
+#overlayControls a#prevItem:after {
+	border-width: 5vh 4vw 5vh 0px;
+	border-right-color: white;
+}
+
+#overlayControls a#nextItem:after {
 	border-width: 5vh 0 5vh 4vw;
 	border-left-color: white;
 }
 
-#overlayControls a#prevItem:hover {
+#overlayControls a:hover {
+	border: none;
+}
+
+#overlayControls a#prevItem:hover:after {
 	border-right-color: orangered;
 }
 
-#overlayControls a#nextItem:hover {
+#overlayControls a#nextItem:hover:after {
 	border-left-color: orangered;
 }
 
