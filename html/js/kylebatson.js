@@ -233,6 +233,7 @@ $(document).ready(function(){
 		$.get(link, function(data) {
 			overlayContent = $(data).find('article');
 			$("#overlay").append(overlayContent).css("display", "grid").attr("aria-hidden", false);
+			$(".portfolioItem-details").attr("role", "dialog");
 			$("header, main, footer").attr('aria-hidden', true);
 			$(".closeButton").focus();
 			$("body").addClass("hasOverlay");

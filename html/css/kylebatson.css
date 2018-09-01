@@ -51,7 +51,7 @@ p {
 }
 
 a {
-	color: orangered;
+	color: #d43a00;
 	text-decoration: none;
 	border-bottom: 2px solid transparent;
 	box-sizing: border-box;
@@ -59,7 +59,7 @@ a {
 }
 
 a:hover {
-	border-color: orangered;
+	border-color: #d43a00;
 }
 
 strong {
@@ -386,7 +386,7 @@ section#resume {
 }
 
 #resumeDownload:hover {
-	background: orangered;
+	background: #d43a00;
 }
 
 section#contact {
@@ -586,7 +586,7 @@ body.night, .night .portfolioItem-content {
 }
 
 #overlay .closeButton:hover:after {
-	background: orangered;
+	background: #d43a00;
 }
 
 #overlayControls {
@@ -651,11 +651,11 @@ body.night, .night .portfolioItem-content {
 }
 
 #overlayControls a#prevItem:hover:after {
-	border-right-color: orangered;
+	border-right-color: #d43a00;
 }
 
 #overlayControls a#nextItem:hover:after {
-	border-left-color: orangered;
+	border-left-color: #d43a00;
 }
 
 @media (max-width: 850px){
@@ -730,7 +730,7 @@ body.night, .night .portfolioItem-content {
 	width: 10px;
 	border-radius: 5px;
 	display: block;
-	background: orangered;
+	background: #d43a00;
 }
 
 .slideControl:hover:before {
