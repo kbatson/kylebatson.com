@@ -459,6 +459,10 @@ footer nav ul li {
 	margin: 0;
 }
 
+#copyright p, #github p {
+	margin: 0;
+}
+
 @media(max-width: 600px){
 	main {
 		grid-template-columns: 1fr;
