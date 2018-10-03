@@ -71,4 +71,19 @@ $(document).ready(function(){
 		slideIndex = $(this).index();
 		nextSlide(slideIndex + 1);
 	});
+	
+	$(".slide").swipe({
+        //Generic swipe handler for all directions
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        	console.log("You swiped " + direction );
+        	if(direction == "left"){
+        		slideIndex = slideIndex + 1;
+        	} else if(direction == "right") {
+        		slideIndex = slideIndex - 1;
+        	}
+        	switchSlide(slideIndex);
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold:75
+    });
 });
