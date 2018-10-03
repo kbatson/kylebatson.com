@@ -23,6 +23,7 @@ body {
 
 body.hasOverlay {
 	overflow: hidden;
+	position: fixed;
 }
 
 body.baseline {
@@ -587,11 +588,12 @@ body.night, .night .portfolioItem-content {
 
 #overlay .closeButton {
 	height: 2.2rem;
-	width: 100%;
+	width: 2rem;
 	grid-area: right;
 	z-index: 1;
 	text-indent: -999em;
-	position: relative;
+	position: absolute;
+	right: 0;
 	overflow: hidden;
 }
 

@@ -1,6 +1,6 @@
 //** Slideshow **//
 var numSlides = 0;
-var slideIndex = "";
+var slideIndex = 0;
 var slideWidth = 0;
 var slideshowPosition = 0;
 var resizeSlides = function(){
@@ -35,7 +35,7 @@ var selectSlide = function(element){ //Get proper index for any selected slide
 
 //** Switch Slides**//
 var switchSlide = function(slideIndex){ //Switch to specified slide
-	slideshowPosition = eval(0 - $(".slide:eq(" + slideIndex + ")").position().left);
+	slideshowPosition = 0 - $(".slide:eq(" + slideIndex + ")").position().left;
 	$(".slideshowContent").css("left", slideshowPosition);
 	$(".slideControl").each(function(){
 		$(this).removeClass("active");
@@ -57,8 +57,12 @@ var nextSlide = function(index){ //Return to beginning of slideshow if at the en
 
 
 $(document).ready(function(){
+	resizeSlides();
+	createSlideshowControls();
+
 	$(window).on('resize', function(){ //Ensure dimensions are updated if window is resized
 		resizeSlides();
+		//createSlideshowControls();
 	});
 	
 	$("body").on('click', '.slideControl', function(e){ //Navigate between slides by clicking on slide controls
@@ -68,20 +72,27 @@ $(document).ready(function(){
 	});
 	
 	$("body").on('click', '.slide', function(){ //Navigate between slides by clicking on the slide itself
-		slideIndex = $(this).index();
-		nextSlide(slideIndex + 1);
+		if(slideIndex < (numSlides -1)){
+			slideIndex = $(this).index() + 1;
+		} else {
+			console.log('last slide');
+			slideIndex = 0;
+		}
+		switchSlide(slideIndex);
 	});
-	
-	$(".slide").swipe({
+
+	$("body").swipe({
         //Generic swipe handler for all directions
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
         	console.log("You swiped " + direction );
-        	if(direction == "left"){
-        		slideIndex = slideIndex + 1;
-        	} else if(direction == "right") {
-        		slideIndex = slideIndex - 1;
-        	}
-        	switchSlide(slideIndex);
+        	if($("body").hasClass("hasOverlay")){
+	        	if(direction == "left"){
+	        		slideIndex = slideIndex + 1;
+	        	} else if(direction == "right") {
+	        		slideIndex = slideIndex - 1;
+	        	}
+	        	switchSlide(slideIndex);
+	        }
         },
         //Default is 75px, set to 0 for demo so any distance triggers swipe
         threshold:75
