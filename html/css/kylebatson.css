@@ -232,7 +232,7 @@ section#intro {
 }
 
 section#intro .sectionContent {
-	column-count: 3;
+	column-count: 4;
 	column-gap: 1rem;
 }
 
