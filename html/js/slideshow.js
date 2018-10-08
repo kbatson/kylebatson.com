@@ -1,19 +1,23 @@
 //** Slideshow **//
 var numSlides = 0;
-var slideIndex = 0;
+var slideIndex = "";
 var slideWidth = 0;
 var slideshowPosition = 0;
 var resizeSlides = function(){
 	slideWidth = $(".slideshow").width();
-	$(".slideshow").width(slideWidth);
+	console.log('slideWidth', slideWidth);
+	//$(".slideshow").width(slideWidth);
 	$(".slideshow .slide").width(slideWidth);
 	setSlideshowDimensions();
+	switchSlide(slideIndex);
 }
 var setSlideshowDimensions = function(){
 	numSlides = $(".slideshow .slide").length;
 	$(".slideshowContent").width(numSlides*slideWidth);
 }
 var createSlideshowControls = function(){
+	console.log('createcontrols');
+	$(".slideshowControls").html("");
 	if(numSlides > 1){
 		for($i = 0; $i < numSlides; $i++){
 			if($i == 0){
@@ -35,26 +39,15 @@ var selectSlide = function(element){ //Get proper index for any selected slide
 
 //** Switch Slides**//
 var switchSlide = function(slideIndex){ //Switch to specified slide
-	slideshowPosition = 0 - $(".slide:eq(" + slideIndex + ")").position().left;
+	slideshowPosition = eval(0 - $(".slide:eq(" + slideIndex + ")").position().left);
 	$(".slideshowContent").css("left", slideshowPosition);
 	$(".slideControl").each(function(){
 		$(this).removeClass("active");
 	});
+	console.log('slideIndex', $(".slideControl:eq(" + slideIndex + ")").attr("data-slide"));
 	$(".slideControl:eq(" + slideIndex + ")").addClass("active");
 
 }
-
-var nextSlide = function(index){ //Return to beginning of slideshow if at the end
-	if(index < numSlides){
-		console.log('not last slide');
-		switchSlide(index);
-	} else {
-		console.log('last slide');
-		switchSlide(0);
-	}
-}
-
-
 
 $(document).ready(function(){
 	resizeSlides();
@@ -81,18 +74,16 @@ $(document).ready(function(){
 		switchSlide(slideIndex);
 	});
 
-	$("body").swipe({
+	$(".slide").swipe({
         //Generic swipe handler for all directions
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
         	console.log("You swiped " + direction );
-        	if($("body").hasClass("hasOverlay")){
-	        	if(direction == "left"){
-	        		slideIndex = slideIndex + 1;
-	        	} else if(direction == "right") {
-	        		slideIndex = slideIndex - 1;
-	        	}
-	        	switchSlide(slideIndex);
-	        }
+        	if(direction == "left"){
+        		slideIndex = slideIndex + 1;
+        	} else if(direction == "right") {
+        		slideIndex = slideIndex - 1;
+        	}
+        	switchSlide(slideIndex);
         },
         //Default is 75px, set to 0 for demo so any distance triggers swipe
         threshold:75

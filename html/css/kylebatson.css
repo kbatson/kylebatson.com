@@ -733,6 +733,7 @@ body.night, .night .portfolioItem-content {
 /** Slideshow START **/
 .slideshow {
 	margin: auto;
+	width: calc(100vw - 2rem);
 	background: #ffffff;
 }
 
@@ -757,7 +758,7 @@ body.night, .night .portfolioItem-content {
 }
 
 .slide img {
-	width: 100%;
+	width: 95vw;
 }
 
 .slideshowControls {
