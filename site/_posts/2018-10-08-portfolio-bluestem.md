@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-title: "Bluestem Bed &amp; Breakfast"
+title: "Bluestem Bed & Breakfast"
 slug: "portfolio-bluestem"
 skills:
   - "Website design"

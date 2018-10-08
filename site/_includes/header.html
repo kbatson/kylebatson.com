@@ -14,5 +14,5 @@
 <body>
 <header>
 	<h1><strong>Kyle Batson</strong> Portfolio</h1>
-	<nav><a id="back" href="./index.html">Back</a></nav>
+	<nav><a id="back" href="./index.html">Back</a> {% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }}{% endif %}</a>{% if page.prev %}, <a href="{{ page.previous.url }}">Prev</a>{% endif %}</nav>
 </header>
