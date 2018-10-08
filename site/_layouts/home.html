@@ -1,6 +1,14 @@
 {% include header.html %}
 
 <main>
+	{% for section in page.sections %}
+	<section id="{{ section.name }}">
+		<h2>{{ section.title }}</h2>
+		<div class="sectionContent">
+		{{ section.content }}	
+		</div>
+	</section>
+	{% endfor %}
 	{{ content }}
 	
 	<!-- Portfolio -->
