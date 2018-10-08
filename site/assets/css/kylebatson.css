@@ -106,7 +106,7 @@ p#contact {
 	vertical-align: baseline;
 	line-height: 1rem;
 	text-indent: -999em;
-	background: url(../images/night.svg);
+	background: url(/assets/images/night.svg);
 	filter: brightness(0);
 }
 
@@ -134,11 +134,11 @@ p#contact {
 }
 
 #resume:after {
-	background: url(../images/downloadPDF.svg) center;
+	background: url(/assets/images/downloadPDF.svg) center;
 }
 
 #email:after {
-	background: url(../images/email.svg) center;
+	background: url(/assets/images/email.svg) center;
 }
 
 #email:hover:after, #resume:hover:after {
@@ -176,11 +176,11 @@ header nav ul li:last-child {
 }
 
 #prevItem a:before {
-	content: "\25C2";
+	content: "\25C2 ";
 }
 
 #nextItem a:after {
-	content: "\25B8";
+	content: " \25B8";
 }
 
 main {
@@ -404,7 +404,7 @@ section#resume {
 	width: 1.5rem;
 	margin-right: .5rem;
 	display: inline-block;
-	background: url(../images/downloadPDF.svg) center;
+	background: url(/assets/images/downloadPDF.svg) center;
 	filter: brightness(2);
 	vertical-align: middle;
 }
@@ -467,15 +467,15 @@ footer nav ul li {
 */
 
 #link-instagram:before {
-	background-image: url(../images/instagram.svg);
+	background-image: url(/assets/images/instagram.svg);
 }
 
 #link-photography:before {
-	background-image: url(../images/kylebatsonphoto.svg);
+	background-image: url(/assets/images/kylebatsonphoto.svg);
 }
 
 #link-desirepath:before {
-	background-image: url(../images/desirepath.svg);
+	background-image: url(/assets/images/desirepath.svg);
 }
 
 #copyright, #github {
@@ -593,150 +593,6 @@ body.night, .night .portfolioItem-content {
 }
 
 /** Night END **/
-
-/** Overlay START **/
-#overlay {
-	display: none;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	min-height: 100vh;
-	padding-top: 1rem;
-	overflow: scroll;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,.6);
-	justify-content: center;
-
-	grid-template-columns: minmax(5vw, auto) 40rem minmax(5vw, auto);
-	grid-template-areas:
-		"left content right";
-}
-
-#overlay .closeButton {
-	height: 2.2rem;
-	width: 2rem;
-	grid-area: right;
-	z-index: 1;
-	text-indent: -999em;
-	position: absolute;
-	right: 0;
-	overflow: hidden;
-}
-
-#overlay .closeButton:hover {
-	border: none;
-	color: white;
-}
-
-#overlay .closeButton:after {
-	display: block;
-	content: "\000D7";
-	height: 2rem;
-	width: 2rem;
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 2rem;
-	line-height: 2rem;
-	background: white;
-	border-radius: 1rem;
-	text-align: center;
-	text-indent: -.2rem;
-	box-sizing: border-box;
-	padding-left: .2rem;
-}
-
-#overlay .closeButton:hover:after {
-	background: #d43a00;
-}
-
-#overlayControls {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 100vh;
-	width: 100vw;
-	z-index: 1;
-	display: grid;
-	pointer-events: none;
-	cursor: default;
-	grid-template-columns: minmax(5vw, auto) 40rem minmax(5vw, auto);
-	grid-template-areas:
-		"left center right";
-	align-content: center;
-}
-
-#overlayControls a {
-	display: inline-block;
-	height: 25vh;
-	width: 100%;
-	justify-self: center;
-	text-indent: -999em;
-	pointer-events: all;
-	cursor: pointer;
-	overflow: auto;
-	position: relative;
-}
-
-#overlayControls a#prevItem {
-	grid-area: left;
-}
-
-#overlayControls a#nextItem {
-	grid-area: right;
-}
-
-#overlayControls a:after {
-	display: block;
-	content: " ";
-	position: absolute;
-	top: 0;
-	left: 50%;
-	margin-left: -2vw;
-	border: 25vh solid transparent;
-}
-
-#overlayControls a#prevItem:after {
-	border-width: 5vh 4vw 5vh 0px;
-	border-right-color: white;
-}
-
-#overlayControls a#nextItem:after {
-	border-width: 5vh 0 5vh 4vw;
-	border-left-color: white;
-}
-
-#overlayControls a:hover {
-	border: none;
-}
-
-#overlayControls a#prevItem:hover:after {
-	border-right-color: #d43a00;
-}
-
-#overlayControls a#nextItem:hover:after {
-	border-left-color: #d43a00;
-}
-
-@media (max-width: 850px){
-	#overlay, #overlayControls {
-		grid-template-columns: 5vw 90vw 5vw;
-	}
-	
-	#overlayControls a#prevItem {
-		border-width: 5vh 4vw 5vh 0px;
-	}
-	
-	#overlayControls a#nextItem {
-		border-width: 5vh 0 5vh 4vw;
-	}
-}
-
-/** Overlay END **/
 
 /** Slideshow START **/
 .slideshow {
