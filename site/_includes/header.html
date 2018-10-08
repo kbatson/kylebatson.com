@@ -3,7 +3,7 @@
 <head>
 	<title>Kyle Batson Portfolio | {{ page.title }}</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/kylebatson.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/internal.css">
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="/assets/js/jquery.touchSwipe.min.js"></script>
 	<script src="/assets/js/slideshow.js"></script>
@@ -14,5 +14,15 @@
 <body>
 <header>
 	<h1><strong>Kyle Batson</strong> Portfolio</h1>
-	<nav><a id="back" href="./index.html">Back</a> {% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }}{% endif %}</a>{% if page.prev %}, <a href="{{ page.previous.url }}">Prev</a>{% endif %}</nav>
+	<nav>
+		{% if page.url == "/" %}<ul>
+			<li><a id="email" href="mailto:kyledbatson@gmail.com">kyledbatson@gmail.com</a></li>
+			<li><a href="resume/kylebatson-resume-2018-10-03.pdf" id="resume" title="Download resume in PDF format">Resume</a></li>
+		</ul>
+		{% else %}<ul>
+			{% if page.previous %}<li id="prevItem"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
+			<li><a href="/">Home</a></li>
+			{% if page.next %}<li id="nextItem"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
+		</ul>{% endif %}
+	</nav>
 </header>
