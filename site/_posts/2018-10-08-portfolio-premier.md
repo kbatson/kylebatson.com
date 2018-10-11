@@ -2,10 +2,7 @@
 layout: portfolio
 title: "Premier Sports Management"
 slug: "portfolio-premier"
-skills:
-  - "Website design"
-  - "ExpressionEngine Development"
-  - "Full stack development (CSS, HTML, Javascript, PHP, MySQL)"
+thumb: /assets/images/premier-thumb.jpg
 images:
   - url: /assets/images/premier-premier.jpg
     caption: "Premier Sports Management website design"
@@ -15,6 +12,10 @@ images:
     caption: "Lowe's Racing website design"
   - url: /assets/images/premier-lowes1.jpg
     caption: "Senior CLASS Award website design"
+skills:
+  - "Website design"
+  - "ExpressionEngine Development"
+  - "Full stack development (CSS, HTML, Javascript, PHP, MySQL)"
 ---
 <p class="portfolioExternalLink"><a href="http://www.seniorclassaward.com/" title="Senior CLASS Award">www.seniorclassaward.com</a></p>
 <p>I have worked with Premier Sports Management on a number of projects over the years, from basic web design projects, to full-stack web app projects with extensive data sets.</p>

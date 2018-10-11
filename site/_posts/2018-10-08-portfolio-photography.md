@@ -2,10 +2,7 @@
 layout: portfolio
 title: "Photography"
 slug: "portfolio-photography"
-skills:
-  - "Photography"
-  - "Studio lighting"
-  - "Retouching and photo manipulation"
+thumb: /assets/images/photo-thumb.jpg
 images:
   - url: /assets/images/photo8.jpg
     caption: "Studio portrait of a woman"
@@ -27,6 +24,10 @@ images:
     caption: "Candid street photograph in Brazil"
   - url: /assets/images/photo7.jpg
     caption: "Candid street photograph in Bolivia"
+skills:
+  - "Photography"
+  - "Studio lighting"
+  - "Retouching and photo manipulation"
 ---
 <p class="portfolioExternalLink"><a href="http://www.kylebatsonphoto.com/" title="Link to my photography website">www.kylebatsonphoto.com</a>
 			<p>Photography is a huge passion of mine. I enjoy traveling and taking photos candidly of strangers all around the world. I have also used my photography skills in more formal settings such as architectural interiors, portraits and other studio work. I have included a small number of samples here, but you can see more of my work at my photography website <a href="http://www.kylebatsonphoto.com/">www.kylebatsonphoto.com</a>.</p>

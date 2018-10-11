@@ -2,16 +2,7 @@
 layout: portfolio
 title: "ETS Test Client Assessment Application"
 slug: "portfolio-testclient"
-skills:
-  - "User Interface Design"
-  - "User Experience Design"
-  - "Mobile Design"
-  - "Front-end Development (CSS/LESS, HTML, Javascript)"
-  - "Icon design"
-  - "Team management"
-  - "Systems analysis"
-  - "Documentation"
-  - "WCAG accessibility design and development"
+thumb: /assets/images/testclient-thumb.png
 images:
   - url: /assets/images/testclient-tools.png
     caption: "Browser-based assessment software screenshot"
@@ -23,6 +14,16 @@ images:
     caption: "Test Client Accenture assessment interface"
   - url: /assets/images/testclient-tts-userflow.png
     caption: "Test Client text-to-speech workflow diagram"
+skills:
+  - "User Interface Design"
+  - "User Experience Design"
+  - "Mobile Design"
+  - "Front-end Development (CSS/LESS, HTML, Javascript)"
+  - "Icon design"
+  - "Team management"
+  - "Systems analysis"
+  - "Documentation"
+  - "WCAG accessibility design and development"
 ---
 <p>During my five years working in assessment software, this application was my primary focus. Initially hired as the UI designer and developer for this product, I later led the software team that developed the project.</p>
 <p>My focus for the user was on intuitive controls and ease of use, as well as support for screen readers and other accessibility accommodations. My focus for the software was modularity and configurability so that the same application instance could support a variety of themes, workloads, tool configurations and more with only small configuration changes.</p>

@@ -2,12 +2,7 @@
 layout: portfolio
 title: "Branding"
 slug: "portfolio-branding"
-skills:
-  - "Branding/Identitiy"
-  - "ExpressionEngine CMS development"
-  - "Branding/Identity"
-  - "Front-end development (HTML, CSS, Javascript)"
-  - "Photography"
+thumb: /assets/images/portfolio-logos-thumb.png
 images:
   - url: /assets/images/portfolio-logos.png
     caption: "Various logo designs"
@@ -17,5 +12,11 @@ images:
     caption: "Print advertising for Bluestone Lighting"
   - url: /assets/images/portfolio-branding-foundation3d.png
     caption: "Website design for Foundation 3D"
+skills:
+  - "Branding/Identitiy"
+  - "ExpressionEngine CMS development"
+  - "Branding/Identity"
+  - "Front-end development (HTML, CSS, Javascript)"
+  - "Photography"
 ---
 <p>The above images show some examples of Branding and Identify work I have done over the years.</p>

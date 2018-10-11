@@ -2,6 +2,7 @@
 layout: portfolio
 title: "User Experience Design and Strategy at CA&amp;L"
 slug: "portfolio-bluestem"
+thumb: /assets/images/ux-thumb.png
 images:
   - url: /assets/images/ux-flow.png
     caption: "UX flow diagram"

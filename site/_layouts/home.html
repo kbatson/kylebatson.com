@@ -18,7 +18,7 @@
 			<ul>
 				{% for page in site.posts %}
 				<li class="portfolioLink">
-					<a href="{{ page.url }}" title="{{ page.title }}">{% for image in page.images limit:1 %}<img src="{{ image.url }}" alt="{{ post.title }}" /></a>{% endfor %}
+					<a href="{{ page.url }}" title="{{ page.title }}">{% for image in page.images limit:1 %}<img src="{% if page.thumb %}{{ page.thumb }}{% else %}{{ image.url }}{% endif %}" alt="{{ post.title }}" /></a>{% endfor %}
 				</li>
 				{% endfor %}
 			</ul>
