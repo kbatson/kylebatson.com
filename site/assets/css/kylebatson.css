@@ -176,7 +176,7 @@ header nav ul li:last-child {
 }
 
 #prevItem a:before {
-	content: "\25C2 ";
+	content: "\25C2\ ";
 }
 
 #nextItem a:after {
