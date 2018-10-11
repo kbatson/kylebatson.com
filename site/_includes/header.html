@@ -20,9 +20,9 @@
 			<li><a href="/assets/resume/kylebatson-resume-2018-10-03.pdf" id="resume" title="Download resume in PDF format">Resume</a></li>
 		</ul>
 		{% else %}<ul>
-			{% if page.previous %}<li id="prevItem"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
+			{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
 			<li><a href="/">Home</a></li>
-			{% if page.next %}<li id="nextItem"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
+			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
 		</ul>{% endif %}
 	</nav>
 </header>
