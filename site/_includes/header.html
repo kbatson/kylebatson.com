@@ -13,7 +13,7 @@
 </head>
 <body>
 <header>
-	<h1><strong>Kyle Batson</strong> Portfolio</h1>
+	<h1><a href="/"><strong>Kyle Batson</strong> Portfolio</a></h1>
 	<nav>
 		{% if page.url == "/" %}<ul>
 			<li><a id="email" href="mailto:kyledbatson@gmail.com">kyledbatson@gmail.com</a></li>
@@ -21,7 +21,6 @@
 		</ul>
 		{% else %}<ul>
 			{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
-			<li><a href="/">Home</a></li>
 			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
 		</ul>{% endif %}
 	</nav>
