@@ -28,7 +28,7 @@ sections:
 			<ul>
 				<li>Semantic HTML5, CSS3/LESS</li>
 				<li>Cross platform development <nobr>(Browsers and OSes)</nobr></li>
-				<li>Javascript/jQuery</li>
+				<li>Javascript/jQuery, HighCharts</li>
 				<li>PHP, MySQL</li>
 				<li>Various CMS platforms: ExpressionEngine, Jekyll, Wordpress, Squarespace, Drupal, <nobr>Joomla, etc.</nobr></li>
 				<li>Git, SVN</li>
