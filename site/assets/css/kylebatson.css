@@ -115,7 +115,7 @@ header h1 {
 }
 
 nav {
-	width: 30vw;
+	width: 40vw;
 	font-family: "ltc-bodoni-175", "Times New Roman", serif;
 	font-style: italic;
 	font-weight: 100;
@@ -185,7 +185,7 @@ main {
 
 #intro {
 	margin-top: 8rem;
-	height: 28rem;
+	height: 24rem;
 	display: grid;
 	grid-template-areas:
 		"headline intro"
@@ -271,7 +271,7 @@ main {
     display: block;
     position: absolute;
     z-index: -1;
-    top: -500px;
+    top: -435px;
     right: -1200px;
     background: #000000;
     transform: skewX(135deg);
@@ -288,6 +288,7 @@ main {
 	height: 2rem;
 	margin-bottom: 3rem;
 	position: relative;
+	text-align: center;
 }
 
 #examples h2:after {
@@ -305,14 +306,37 @@ main {
 }
 
 #discovery .shape {
-    width: 200px;
-    height: 400px;
+    width: 270px;
+    height: 370px;
     float: right;
-    shape-outside: polygon(100% 50%, 100% 100%, 0% 100%);
+    shape-outside: polygon(100% 40%, 100% 100%, 20% 100%);
 }
 
 #iteration {
-	grid-column: 8 / span 4;
+	grid-column: 9 / span 4;
 	grid-row: 4;
 	color: #ffffff;
+}
+
+#another {
+	grid-column: 4 / span 4;
+	grid-row: 11;
+	color: #ffffff;
+}
+
+#another:before {
+	content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 400px;
+    right: -279px;
+    background: rgb(255,82,71);
+    transform: rotate(-45deg);
+    height: 2000px;
+    width: 1000px;
+}
+
+#examples #another h2:after {
+	border-color: #000000;
 }
