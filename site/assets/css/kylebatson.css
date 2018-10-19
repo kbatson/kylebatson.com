@@ -13,7 +13,7 @@ body {
 	line-height: 1.5em;
 	font-weight: 300;
 	position: relative;
-	width: 900px;
+	width: 80vw;
 	margin: auto;
 	position: relative;
 }
@@ -37,7 +37,7 @@ body:after {
     position: absolute;
     z-index: -1;
     top: -150px;
-    left: -750px;
+    left: -808px;
     background: rgb(255,82,71);
     transform: skewY(135deg);
     height: 500px;
@@ -109,7 +109,7 @@ header h1 {
 }
 
 nav {
-	width: 50%;
+	width: 30vw;
 }
 
 nav ul {
@@ -173,6 +173,14 @@ main {
 
 #intro #resume {
 	grid-area: resume;
+	height: 3rem;
+	background: #000000;
+	transform: skewX(-45deg);
+	border: 1px solid #ffffff;
+	border-width: 0 1px 1px 0;
+	justify-self: end;
+    width: 30vw;
+    margin-right: 4.3rem;
 }
 
 #examples {
