@@ -6,6 +6,12 @@ html, body {
 	line-height: 1rem;
 }
 
+html {
+	width: 100vw;
+	height: auto;
+	overflow-x: hidden;
+}
+
 body {
 /* 	font-family: museo-sans, Helvetica, Arial, sans-serif; */
 	font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
@@ -37,7 +43,7 @@ body:after {
     position: absolute;
     z-index: -1;
     top: -150px;
-    left: -808px;
+    left: -750px;
     background: rgb(255,82,71);
     transform: skewY(135deg);
     height: 500px;
@@ -94,8 +100,8 @@ body:after {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 4rem;
-	height: 3rem;
+	align-items: flex-end;
+	height: 7rem;
 }
 
 header h1 {
@@ -110,12 +116,15 @@ header h1 {
 
 nav {
 	width: 30vw;
+	font-family: "ltc-bodoni-175", "Times New Roman", serif;
+	font-style: italic;
+	font-weight: 100;
 }
 
 nav ul {
 	display: flex;
 	list-style: none;
-	height: 3rem;
+	height: 7rem;
 	justify-content: space-between;
 	align-items: flex-end;
 	margin: 0;
@@ -124,19 +133,50 @@ nav ul {
 
 nav ul li {
 	position: relative;
-	height: 1rem;
+	height: 7rem;
+	width: 7rem;
 }
 
-nav ul li:after {
+nav ul li a {
+    height: 7rem;
+    line-height: 13rem;
+    text-align: right;
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+
+nav ul li a:after {
+	display: block;
+	position: absolute;
+	content: "";
+	bottom: -.1rem;
+    right: -1.4rem;
+	height: 0;
+	width: 0;
+	border-top: .5rem solid rgb(255,82,71);
+	border-left: .5rem solid rgb(255,82,71);
+	border-right: .5rem solid transparent;
+	border-bottom: .5rem solid transparent;
+}
+
+nav ul li a:before {
 	display: block;
 	position: absolute;
 	content: "";
 	height: 7rem;
-	width: 0;
 	bottom: 0;
 	right: -4rem;
 	border-right: 1px solid #000000;
 	transform: skewX(-45deg);
+}
+
+nav ul li a:hover {
+	color: rgb(255,82,71);
+}
+
+nav ul li a:hover:before {
+	border-color: rgb(255,82,71);
 }
 
 main {
@@ -174,13 +214,48 @@ main {
 #intro #resume {
 	grid-area: resume;
 	height: 3rem;
+	justify-self: end;
+    width: 30vw;
+    margin-right: 4.3rem;
+    line-height: 3rem;
+    font-family: "ltc-bodoni-175", "Times New Roman", serif;
+    font-style: italic;
+    position: relative;
+    text-align: right;
+    color: #ffffff;
+    box-sizing: border-box;
+    padding-right: 2rem;
+    text-decoration: none;
+}
+
+#intro #resume:before {
+	display: block;
+	position: absolute;
+	content: "";
+	top: 0;
+    left: -1.5rem;
+	height: 0;
+	width: 0;
+	border-top: 1.5rem solid rgb(255,82,71);
+	border-left: 1.5rem solid rgb(255,82,71);
+	border-right: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+}
+
+#intro #resume:after {
+	content: "";
+	z-index: -1;
+	display: block;
+	width: inherit;
+	position: absolute;
+	height: 3rem;
+	width: 30vw;
+	right: 0;
+	top: 0;
 	background: #000000;
 	transform: skewX(-45deg);
 	border: 1px solid #ffffff;
 	border-width: 0 1px 1px 0;
-	justify-self: end;
-    width: 30vw;
-    margin-right: 4.3rem;
 }
 
 #examples {
@@ -202,6 +277,27 @@ main {
     transform: skewX(135deg);
     height: 2000px;
     width: 2000px;
+}
+
+#examples h2 {
+	margin: 0;
+	font-family: "ltc-bodoni-175", "Times New Roman", serif;
+	font-style: italic;
+	font-size: 2rem;
+	font-weight: 100;
+	height: 2rem;
+	margin-bottom: 3rem;
+	position: relative;
+}
+
+#examples h2:after {
+	content: "";
+	display: block;
+	width: 10vw;
+	position: absolute;
+	left: 0;
+	bottom: -1rem;
+	border-bottom: 2px solid rgb(255,82,71);
 }
 
 #discovery {
