@@ -304,6 +304,13 @@ main {
 	grid-column: 1 / span 4;
 }
 
+#discovery .shape {
+    width: 200px;
+    height: 400px;
+    float: right;
+    shape-outside: polygon(100% 50%, 100% 100%, 0% 100%);
+}
+
 #iteration {
 	grid-column: 8 / span 4;
 	grid-row: 4;
