@@ -6,22 +6,19 @@
 	
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/jquery.touchSwipe.min.js"></script>
-	<script src="/assets/js/slideshow.js"></script>
+	<!-- <script src="/assets/js/slideshow.js"></script> -->
 	<link rel="stylesheet" href="https://use.typekit.net/ksl5tjl.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 </head>
 <body>
 <header>
-	<h1><a href="/"><strong>Kyle Batson</strong> Portfolio</a></h1>
+	<h1><a href="/"><strong>Kyle Batson</strong> <span id="jobTitle">Designer</span></a></h1>
 	<nav>
-		{% if page.url == "/" %}<ul>
-			<li><a id="email" href="mailto:kyledbatson@gmail.com">kyledbatson@gmail.com</a></li>
-			<li><a href="/assets/resume/kylebatson-resume-2018-10-03.pdf" id="resume" title="Download resume in PDF format">Resume</a></li>
+		<ul>
+			<li>Expertise</li>
+			<li>Examples</li>
+			<li>Contact</li>
 		</ul>
-		{% else %}<ul>
-			{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
-			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
-		</ul>{% endif %}
 	</nav>
 </header>
