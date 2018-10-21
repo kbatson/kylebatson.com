@@ -22,8 +22,10 @@
 		<h2>Examples</h2>
 		{% for page in site.posts %}
 		<a class="portfolioItem" href="{{ page.url }}" title="{{ page.title }}">
-			<h3>{{ post.title }}</h3>
-			{% for image in page.images limit:1 %}<img src="{% if page.thumb %}{{ page.thumb }}{% else %}{{ image.url }}{% endif %}" alt="{{ post.title }}" />{% endfor %}
+			<h3>{{ page.title }}</h3>
+			{% for image in page.images limit:1 %}<figure>
+				<img src="{% if page.thumb %}{{ page.thumb }}{% else %}{{ image.url }}{% endif %}" alt="{{ post.title }}" />
+			</figure>{% endfor %}
 		</a>
 		{% endfor %}
 	</section>
