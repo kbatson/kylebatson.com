@@ -20,22 +20,12 @@
 	</section>
 	<section id="examples">
 		<h2>Examples</h2>
-		<div class="portfolioItem">
-			<h3>Portfolio Item</h3>
-			<img src="">
-		</div>
-		<div class="portfolioItem">
-			<h3>Portfolio Item</h3>
-			<img src="">
-		</div>
-		<div class="portfolioItem">
-			<h3>Portfolio Item</h3>
-			<img src="">
-		</div>
-		<div class="portfolioItem">
-			<h3>Portfolio Item</h3>
-			<img src="">
-		</div>
+		{% for page in site.posts %}
+		<a class="portfolioItem" href="{{ page.url }}" title="{{ page.title }}">
+			<h3>{{ post.title }}</h3>
+			{% for image in page.images limit:1 %}<img src="{% if page.thumb %}{{ page.thumb }}{% else %}{{ image.url }}{% endif %}" alt="{{ post.title }}" />{% endfor %}
+		</a>
+		{% endfor %}
 	</section>
 	<!-- <section id="caseStudies">
 		<div id="discovery">
