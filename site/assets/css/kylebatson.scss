@@ -29,6 +29,43 @@ body {
 	position: relative;
 }
 
+html.baseline {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, rgba(255,255,255,0))) 0 1px;
+/*
+  background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+  background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+  background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+  background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+*/
+  background: linear-gradient(top, #d9eaf3 0%, rgba(255,255,255,0) 8%) 0 1px;
+/*
+  -webkit-background-size: 100% 15px;
+  -moz-background-size: 100% 15px;
+  -ms-background-size: 100% 15px;
+  -o-background-size: 100% 15px;
+*/
+  background-size: 100% 1rem;
+}
+
+html.baseline body {
+  
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#d9eaf3), color-stop(2%, rgba(255,255,255,0)), color-stop(98%, rgba(255,255,255,0)), color-stop(100%, #d9eaf3)) 0 1px;
+    /*
+    background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+    background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+    background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+    background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 1px;
+    */
+    // background: linear-gradient(to right, #d9eaf3 0%, rgba(255,255,255,0) 8%) 0 1px;
+    /*
+    -webkit-background-size: 100% 15px;
+    -moz-background-size: 100% 15px;
+    -ms-background-size: 100% 15px;
+    -o-background-size: 100% 15px;
+    */
+  background-size: 6.65vw 100%;
+}
+
 body:before {
 	content: "";
     display: block;
@@ -220,7 +257,7 @@ main {
 	grid-area: resume;
 	height: 3rem;
 	justify-self: end;
-    width: 30vw;
+    width: calc(100% - 4.3rem);
     margin-right: 4.3rem;
     line-height: 3rem;
     font-family: "ltc-bodoni-175", "Times New Roman", serif;
@@ -238,7 +275,7 @@ main {
 	position: absolute;
 	content: "";
 	top: 0;
-    left: -1.5rem;
+    left: 0;
 	height: 0;
 	width: 0;
 	border-top: 1.5rem solid $highlightColor;
@@ -254,10 +291,11 @@ main {
 	width: inherit;
 	position: absolute;
 	height: 3rem;
-	width: 30vw;
-	right: 0;
+	width: calc(100% - 1.5rem);
+	left: 0;
 	top: 0;
 	background: #000000;
+    transform-origin: 0 100%;
 	transform: skewX(-45deg);
 	border: 1px solid #ffffff;
 	border-width: 0 1px 1px 0;
