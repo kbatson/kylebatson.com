@@ -348,7 +348,7 @@ main {
     font-family: "ltc-bodoni-175", "Times New Roman", serif;
     font-style: italic;
     font-size: 2rem;
-    font-weight: 100;
+    font-weight: 500;
     height: 2rem;
     margin-bottom: 3rem;
     position: relative;
@@ -358,7 +358,7 @@ main {
 #examples h2:after {
     content: "";
     display: block;
-    width: 10vw;
+    width: 100%;
     position: absolute;
     left: 0;
     bottom: -1rem;
@@ -388,6 +388,7 @@ main {
 }
 
 .portfolioItem:hover {
+    border-bottom: 2px solid $highlightColor;
     z-index: 1;
     animation: portfolioHighlight.3s ease-in;
     animation-fill-mode: forwards;
@@ -416,6 +417,10 @@ main {
     line-height: 1.2em;
     grid-row: 2;
     font-weight: 100;
+}
+
+.portfolioItem:hover h3 {
+    color: $highlightColor;
 }
 
 .portfolioItem figure {
