@@ -187,39 +187,46 @@ nav ul li a {
     display: block;
     text-decoration: none;
     color: #000000;
-}
-
-nav ul li a:after {
-	display: block;
-	position: absolute;
-	content: "";
-	bottom: -.1rem;
-    right: -1.4rem;
-	height: 0;
-	width: 0;
-	border-top: .5rem solid $highlightColor;
-	border-left: .5rem solid $highlightColor;
-	border-right: .5rem solid transparent;
-	border-bottom: .5rem solid transparent;
+    padding-bottom: .2rem;
 }
 
 nav ul li a:before {
-	display: block;
-	position: absolute;
+	display: inline-block;
 	content: "";
-	height: 7rem;
+    position: absolute;
 	bottom: 0;
-	right: -4rem;
-	border-right: 1px solid #000000;
-	transform: skewX(-45deg);
+    right: -.5rem;
+    height: 100%;
+    width: 1px;
+    transform-origin: 0 100%;
+    transform: skewX(-45deg);
+    background: $highlightColor;
+	// border-top: .5rem solid transparent;
+	// border-left: .5rem solid transparent;
+	// border-right: .5rem solid $highlightColor;
+	// border-bottom: .5rem solid $highlightColor;
+    transition: .2s all ease-in;
+    z-index: -1;
+}
+
+nav ul li a:after {
+	// display: block;
+	// position: absolute;
+	// content: "";
+	// height: 7rem;
+	// bottom: 0;
+	// right: -4rem;
+	// border-right: 1px solid #000000;
+	// transform: skewX(-45deg);
 }
 
 nav ul li a:hover {
-	color: $highlightColor;
+	color: #ffffff;
 }
 
 nav ul li a:hover:before {
-	border-color: $highlightColor;
+	//border-color: $highlightColor;
+    width: 100%;
 }
 
 main {
