@@ -1,6 +1,45 @@
 {% include header.html %}
 <main class="portfolio">
-    <h1>{{ page.title }}
-    {{ content }}
+	<a href="/">&laquo; Home</a>
+    <h1>{{ page.title }}</h1>
+    <article>
+    	<div class="slideshow">
+			<div class="slideshowWrapper">
+				<div class="slideshowContent">
+					{% for image in page.images %}
+					<figure class="slide">
+						<img src="{{ image.url }}" alt="{{ image.caption }}" />
+						<figcaption>{{ image.caption }}</figcaption>
+					</figure>
+					{% endfor %}
+				</div>
+			</div>
+			<nav class="slideshowDirection">
+				<a href="#" class="previousSlide" title="Previous Slide">
+					<span>Previous Slide</span>
+				</a>
+				<a href="#" class="nextSlide" title="Next Slide">
+					<span>Next Slide</span>
+				</a>
+			</nav>
+			<nav class="slideshowControls">
+				
+			</nav>
+		</div>
+	    {{ content }}
+    </article>
+
+
+	<!-- <div class="portfolioItem-content">
+		<h3>{{ page.title }}</h3>
+		{{ content }}
+		<h4>Skills Utilized:</h4>
+		<ul class="portfolioSkills">
+			{% for skill in page.skills %}
+			<li>{{ skill }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+	</article> -->
 </main>
 {% include footer.html %}

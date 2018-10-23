@@ -2,13 +2,19 @@
 ---
 
 @import "kb-global";
+@import "slideshow.css";
 
-body:before {
+body {
+    overflow: auto;
+    margin-bottom: 6rem;
+}
+
+header:before {
     background: transparent;
     border: 1px solid #000000;
 }
 
-body:after {
+header:after {
     top: -200px;
     left: -726px;
 }
@@ -24,3 +30,47 @@ header h1 {
     height: 37px;
 }
 
+main {
+    margin-top: 6rem;
+}
+
+main.portfolio h1 {
+    font-family: "ltc-bodoni-175", "Times New Roman", serif;
+    font-style: italic;
+    margin-bottom: 3rem;
+    position: relative;
+    background: #ffffff;
+    border: 1rem solid #ffffff;
+    margin-left: -1rem;
+}
+
+main.portfolio h1:before {
+    content: "";
+    display: block;
+    width: 20vw;
+    height: 0;
+    border-top: 1px solid $highlightColor;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+}
+
+main article {
+    background: #ffffff;
+    border: 1rem solid #ffffff;
+    margin: -1rem;
+}
+
+.slideshow {
+    width: 50%;
+    float: right;
+    margin: 0 0 1rem 1rem;
+}
+
+.slideshowWrapper {
+    width: 100%;
+}
+
+.slideControl:before {
+    background: $highlightColor;
+}

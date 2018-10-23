@@ -4,11 +4,12 @@
 	<title>Kyle Batson Portfolio | {{ page.title }}</title>
 	{% if page.url == "/" %}<link rel="stylesheet" type="text/css" href="/assets/css/kb-home.css">
 	{% else %}<link rel="stylesheet" type="text/css" href="/assets/css/kb-portfolio.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/assets/css/slideshow.css"> -->
 	{% endif %}
 	
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/jquery.touchSwipe.min.js"></script>
-	<!-- <script src="/assets/js/slideshow.js"></script> -->
+	{% unless page.url == "/" %}<script src="/assets/js/slideshow.js"></script>{% endunless %}
 	<link rel="stylesheet" href="https://use.typekit.net/ksl5tjl.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -18,9 +19,10 @@
 	<h1><a href="/"><strong>Kyle Batson</strong> <span id="jobTitle">Designer</span></a></h1>
 	<nav>
 		<ul>
-			<li><a href="#">Expertise</a></li>
-			<li><a href="#">Examples</a></li>
-			<li><a href="#">Contact</a></li>
+			<!-- <li><a href="#">Expertise</a></li> -->
+			<li><a href="#examples">Examples</a></li>
+			<li><a href="http://www.kylebatsonphoto.com">Photography</a></li>
+			<li><a href="mailto:kyledbatson@gmail.com">Contact</a></li>
 		</ul>
 	</nav>
 </header>

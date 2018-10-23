@@ -11,11 +11,11 @@ images:
   - url: /assets/images/photo10.jpg
     caption: "Conceptual photo of and art directed by Felicity Bianca"
   - url: /assets/images/photo3.jpg
+    caption: "Mexican festival dancers"
   - url: /assets/images/photo1.jpg
     caption: "Landscape photograph of dunes"
   - url: /assets/images/photo2.jpg
     caption: "Photograph of a gorilla in Rwanda"
-    caption: "Photograph of a Mexican festiva"
   - url: /assets/images/photo4.jpg
     caption: "Candid street photograph in Brazil"
   - url: /assets/images/photo5.jpg

@@ -12,7 +12,6 @@ html, body {
 html {
     width: 100vw;
     height: auto;
-    overflow-x: hidden;
 }
 
 body {
@@ -21,9 +20,6 @@ body {
 /*  font-family: "freight-sans-pro", Helvetica, Arial, sans-serif; */
     line-height: 1.5em;
     font-weight: 300;
-    position: relative;
-    width: 80vw;
-    margin: auto;
     position: relative;
 }
 
@@ -64,7 +60,42 @@ html.baseline body {
   background-size: 6.65vw 100%;
 }
 
-body:before {
+a {
+    color: $highlightColor;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 7rem;
+    width: 80vw;
+    margin: auto;
+    position: relative;
+}
+
+header h1 {
+    background-image: url(/assets/images/kb-logo-white.svg);
+    background-size: 201px 52px;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 52px;
+    margin: 0;
+}
+
+header h1 a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-indent: -999rem;
+}
+
+header:before {
     content: "";
     display: block;
     position: absolute;
@@ -77,7 +108,7 @@ body:before {
     width: 1000px;
 }
 
-body:after {
+header:after {
     content: "";
     display: block;
     position: absolute;
@@ -88,23 +119,6 @@ body:after {
     transform: skewY(135deg);
     height: 500px;
     width: 1000px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 7rem;
-}
-
-header h1 {
-    background-image: url(/assets/images/kb-logo-white.svg);
-    background-size: 201px 52px;
-    background-repeat: no-repeat;
-    text-indent: -999rem;
-    width: 200px;
-    height: 52px;
-    margin: 0;
 }
 
 nav {
@@ -172,6 +186,7 @@ nav ul li a:after {
 
 nav ul li a:hover {
     color: #ffffff;
+    text-decoration: none;
 }
 
 nav ul li a:hover:before {
@@ -181,4 +196,10 @@ nav ul li a:hover:before {
 
 main {
     position: relative;
+    width: 80vw;
+    margin: auto;
+}
+
+figure {
+    margin: 0;
 }

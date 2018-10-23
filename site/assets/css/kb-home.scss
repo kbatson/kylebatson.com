@@ -114,7 +114,7 @@
     top: -435px;
     right: -1200px;
     // background: #000000;
-    border: 1px solid #000000;
+    border-left: 1px solid #000000;
     transform: skewX(135deg);
     height: 2000px;
     width: 2000px;
@@ -165,6 +165,7 @@
 }
 
 .portfolioItem:hover {
+    text-decoration: none;
     border-bottom: 2px solid $highlightColor;
     z-index: 1;
     animation: portfolioHighlight.3s ease-in;
