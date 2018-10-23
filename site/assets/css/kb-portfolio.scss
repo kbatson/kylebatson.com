@@ -1,0 +1,26 @@
+---
+---
+
+@import "kb-global";
+
+body:before {
+    background: transparent;
+    border: 1px solid #000000;
+}
+
+body:after {
+    top: -200px;
+    left: -726px;
+}
+
+header {
+    height: 5rem;
+}
+
+header h1 {
+    background-image: url(/assets/images/kb-logo-black.svg);
+    background-size: 150px 37px;
+    width: 150px;
+    height: 37px;
+}
+
