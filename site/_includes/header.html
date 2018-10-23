@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<title>Kyle Batson Portfolio | {{ page.title }}</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/kylebatson.css">
+	{% if page.url == "/" %}<link rel="stylesheet" type="text/css" href="/assets/css/kb-home.css">
+	{% else %}<link rel="stylesheet" type="text/css" href="/assets/css/kb-portfolio.css">
+	{% endif %}
 	
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/jquery.touchSwipe.min.js"></script>
