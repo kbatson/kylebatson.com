@@ -65,6 +65,10 @@
 	background: #000000;
 }
 
+.slideControl:hover {
+	text-decoration: none;
+}
+
 .slideControl:hover:before {
 	background: #878787;
 }

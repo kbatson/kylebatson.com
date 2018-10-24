@@ -1,6 +1,5 @@
 {% include header.html %}
 <main class="portfolio">
-	<a id="back" href="/">&laquo; Home</a>
 	<div class="slideshow">
 		<div class="slideshowWrapper">
 			<div class="slideshowContent">
@@ -25,6 +24,14 @@
 		</nav>
 	</div>
     <h1>{{ page.title }}</h1>
+    <div id="skills">
+    	<h2>Skills Utilized</h2>
+	    <ul>
+	    	{% for skill in page.skills %}
+			<li>{{ skill }}</li>
+			{% endfor %}
+	    </ul>
+	</div>
     <article>
 	    {{ content }}
     </article>

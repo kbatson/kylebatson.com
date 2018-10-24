@@ -121,30 +121,33 @@ header:after {
     width: 1000px;
 }
 
-nav {
+header nav {
     width: 40vw;
     font-family: "ltc-bodoni-175", "Times New Roman", serif;
     font-style: italic;
     font-weight: 100;
 }
 
-nav ul {
+header nav ul {
     display: flex;
     list-style: none;
     height: 7rem;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: stretch;
     align-items: flex-end;
     margin: 0;
     padding: 0;
+
+    li {
+        position: relative;
+        height: 7rem;
+        display: block;
+        width: 100%;
+        // width: 7rem;
+    }
 }
 
-nav ul li {
-    position: relative;
-    height: 7rem;
-    width: 7rem;
-}
-
-nav ul li a {
+header nav ul li a {
     height: 7rem;
     line-height: 13rem;
     text-align: right;
@@ -154,7 +157,7 @@ nav ul li a {
     padding-bottom: .2rem;
 }
 
-nav ul li a:before {
+header nav ul li a:before {
     display: inline-block;
     content: "";
     position: absolute;
@@ -169,27 +172,30 @@ nav ul li a:before {
     // border-left: .5rem solid transparent;
     // border-right: .5rem solid $highlightColor;
     // border-bottom: .5rem solid $highlightColor;
-    transition: .2s all ease-in;
+    
     z-index: -1;
 }
 
-nav ul li a:after {
-    // display: block;
-    // position: absolute;
-    // content: "";
-    // height: 7rem;
-    // bottom: 0;
-    // right: -4rem;
-    // border-right: 1px solid #000000;
-    // transform: skewX(-45deg);
+header nav ul li a:after {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 7rem;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: $highlightColor;
+    transform: skewX(-45deg);
+    transform-origin: 0 100%;
+    transition: .2s all ease-in;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     color: #ffffff;
     text-decoration: none;
 }
 
-nav ul li a:hover:before {
+header nav ul li a:hover:after {
     //border-color: $highlightColor;
     width: 100%;
 }
@@ -208,8 +214,9 @@ footer {
     width: 80vw;
     margin: auto;
     padding-top: 4rem;
-    background: #ffffff;
     clear: both;
+    text-align: right;
+    font-size: .8em;
 }
 
 footer p {
