@@ -188,6 +188,7 @@ header nav ul li a:after {
     transform: skewX(-45deg);
     transform-origin: 0 100%;
     transition: .2s all ease-in;
+    z-index: -1;
 }
 
 header nav ul li a:hover {
@@ -224,7 +225,82 @@ footer p {
 }
 
 @media only screen and (max-width: 820px) {
+    html {
+        // overflow-x: hidden;
+    }
     body {
+        display: grid;
+        grid-template-columns: 0px repeat(6, 1fr) 0px;
+        grid-template-rows: 0px repeat(auto-fill, 3rem);
+        grid-gap: 1rem;
+    }
+
+    header {
+        grid-column: 2 / span 4;
+        grid-row: 3 / span 6;
+        width: auto;
+        margin: 0;
+
+        display: grid;
+        grid-template-rows: repeat(6, 3rem);
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
         
+        &:before {
+            top: 0;
+        }
+
+        h1 {
+            grid-column: 2 / span 2;
+        }
+
+        nav {
+            width: auto;
+            grid-column: span 2 / 3;
+            grid-row: 3 / span 4;
+            margin-right: -1rem;
+
+            ul {
+                display: block;
+                height: 100%;
+
+                li {
+                    display: block;
+                    height: 4rem;
+                    margin-bottom: 1rem;
+
+                    a {
+                        height: 100%;
+                        line-height: 7rem;
+                        color: #ffffff;
+                        padding-right: 4rem;
+
+                        &:before {
+                            transform-origin: 100% 0;
+                        }
+
+                        &:after {
+                            height: inherit;
+                        }
+
+                        &:hover:after {
+                            width: calc(100% - 4rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        grid-column: 4 / span 5;
+        grid-row: 5;
+        width: auto;
+    }
+
+    footer {
+        grid-row: span 1 / 12;
+        grid-column: span 3 / 8;
+        width: auto;
     }
 }

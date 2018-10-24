@@ -297,3 +297,29 @@
 #caseStudies #another h2:after {
 	border-color: #000000;
 }
+
+@media only screen and (max-width: 820px) {
+    #intro {
+        grid-template-areas:
+            "headline"
+            "intro"
+            "resume";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin-top: 6rem;
+    }
+
+    .introContent {
+        background: #ffffff;
+        padding: 1rem;
+    }
+
+    #examples {
+        grid-template-columns: repeat(2, auto);
+        margin-top: 8rem;
+
+        h2 {
+            grid-column: 1 / 3;
+        }
+    }
+}

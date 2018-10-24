@@ -231,3 +231,23 @@ main article {
 footer {
     color: #ffffff;
 }
+
+@media only screen and (max-width: 820px) {
+    header nav ul li a {
+        color: #000000;
+    }
+
+    main {
+        grid-template-areas:
+        "headline"
+        "slideshow"
+        "article"
+        "skills";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .slideshow {
+        width: 60vw;
+    }
+}
