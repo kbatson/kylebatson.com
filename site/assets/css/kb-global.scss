@@ -205,9 +205,15 @@ figure {
 }
 
 footer {
-    position: relative;
     width: 80vw;
     margin: auto;
+    padding-top: 4rem;
+    background: #ffffff;
+    clear: both;
+}
+
+footer p {
+    margin: 0;
 }
 
 @media only screen and (max-width: 820px) {

@@ -32,39 +32,32 @@ header h1 {
 
 main {
     margin-top: 6rem;
+    background: #ffffff;
+    height: auto;
+    overflow: hidden;
+}
+
+#back {
+    grid-area: back;
 }
 
 main.portfolio h1 {
     font-family: "ltc-bodoni-175", "Times New Roman", serif;
     font-style: italic;
-    margin-bottom: 3rem;
-    position: relative;
-    background: #ffffff;
-    border: 1rem solid #ffffff;
-    margin-left: -1rem;
-}
-
-main.portfolio h1:before {
-    content: "";
-    display: block;
-    width: 20vw;
-    height: 0;
-    border-top: 1px solid $highlightColor;
-    position: absolute;
-    top: -1rem;
-    left: 0;
+    margin: 0;
+    line-height: 1.2em;
 }
 
 main article {
-    background: #ffffff;
     border: 1rem solid #ffffff;
     margin: -1rem;
 }
 
 .slideshow {
-    width: 50%;
+    width: 70%;
     float: right;
-    margin: 0 0 1rem 1rem;
+    max-height: unset;
+    margin: 1rem 0 1rem 1rem;
 }
 
 .slideshowWrapper {

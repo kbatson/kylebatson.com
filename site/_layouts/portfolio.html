@@ -1,33 +1,34 @@
 {% include header.html %}
 <main class="portfolio">
-	<a href="/">&laquo; Home</a>
+	<a id="back" href="/">&laquo; Home</a>
+	<div class="slideshow">
+		<div class="slideshowWrapper">
+			<div class="slideshowContent">
+				{% for image in page.images %}
+				<figure class="slide">
+					<img src="{{ image.url }}" alt="{{ image.caption }}" />
+					<figcaption>{{ image.caption }}</figcaption>
+				</figure>
+				{% endfor %}
+			</div>
+		</div>
+		<nav class="slideshowDirection">
+			<a href="#" class="previousSlide" title="Previous Slide">
+				<span>Previous Slide</span>
+			</a>
+			<a href="#" class="nextSlide" title="Next Slide">
+				<span>Next Slide</span>
+			</a>
+		</nav>
+		<nav class="slideshowControls">
+			
+		</nav>
+	</div>
     <h1>{{ page.title }}</h1>
     <article>
-    	<div class="slideshow">
-			<div class="slideshowWrapper">
-				<div class="slideshowContent">
-					{% for image in page.images %}
-					<figure class="slide">
-						<img src="{{ image.url }}" alt="{{ image.caption }}" />
-						<figcaption>{{ image.caption }}</figcaption>
-					</figure>
-					{% endfor %}
-				</div>
-			</div>
-			<nav class="slideshowDirection">
-				<a href="#" class="previousSlide" title="Previous Slide">
-					<span>Previous Slide</span>
-				</a>
-				<a href="#" class="nextSlide" title="Next Slide">
-					<span>Next Slide</span>
-				</a>
-			</nav>
-			<nav class="slideshowControls">
-				
-			</nav>
-		</div>
 	    {{ content }}
     </article>
+
 
 
 	<!-- <div class="portfolioItem-content">
