@@ -39,6 +39,10 @@ header h1 {
     background-size: 150px 37px;
     width: 150px;
     height: 37px;
+
+    &:after {
+        top: -221px;
+    }
 }
 
 main {
@@ -145,8 +149,21 @@ main article {
     grid-area: slideshow;
 }
 
+.slide {
+    background: #ffffff;
+}
+
+.slideshow figcaption {
+    color: #4a4a4a;
+    font-size: .8rem;
+}
+
 .slideshowWrapper {
     width: 100%;
+}
+
+.slideControl.active {
+    border-color: $highlightColor;
 }
 
 .slideControl:before {
