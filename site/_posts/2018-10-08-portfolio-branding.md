@@ -13,10 +13,6 @@ images:
   - url: /assets/images/portfolio-branding-foundation3d.png
     caption: "Website design for Foundation 3D"
 skills:
-  - "Branding/Identitiy"
-  - "ExpressionEngine CMS development"
   - "Branding/Identity"
-  - "Front-end development (HTML, CSS, Javascript)"
-  - "Photography"
 ---
 <p>The above images show some examples of Branding and Identify work I have done over the years.</p>

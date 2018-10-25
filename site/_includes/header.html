@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
 	<title>Kyle Batson Portfolio | {{ page.title }}</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/kylebatson.css">
+	{% if page.url == "/" %}<link rel="stylesheet" type="text/css" href="/assets/css/kb-home.css">
+	{% else %}<link rel="stylesheet" type="text/css" href="/assets/css/kb-portfolio.css">
+	{% endif %}
 	
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/jquery.touchSwipe.min.js"></script>
-	<script src="/assets/js/slideshow.js"></script>
+	{% unless page.url == "/" %}<script src="/assets/js/slideshow.js"></script>{% endunless %}
 	<link rel="stylesheet" href="https://use.typekit.net/ksl5tjl.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 </head>
 <body>
 <header>
-	<h1><a href="/"><strong>Kyle Batson</strong> Portfolio</a></h1>
+	<h1><a href="/"><strong>Kyle Batson</strong> <span id="jobTitle">Designer</span></a></h1>
 	<nav>
-		{% if page.url == "/" %}<ul>
-			<li><a id="email" href="mailto:kyledbatson@gmail.com">kyledbatson@gmail.com</a></li>
-			<li><a href="/assets/resume/kylebatson-resume-2018-10-03.pdf" id="resume" title="Download resume in PDF format">Resume</a></li>
+		<ul>
+			{% if page.url == "/" %}<!-- <li><a href="#">Expertise</a></li> -->
+			<li><a href="#examples"><span>Work</span></a></li>
+			<li><a href="/portfolio-photography"><span>Photography</span></a></li>
+			<li><a href="mailto:kyledbatson@gmail.com"><span>Contact</span></a></li>
+			{% else %}{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}"><span>&#9666; Previous</span></a></li>{% endif %}
+			<li id="home"><a href="/"><span>Home</span></a></li>
+			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}"><span>Next &#9656;</span></a></li>{% endif %}{% endif %}
 		</ul>
-		{% else %}<ul>
-			{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
-			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
-		</ul>{% endif %}
 	</nav>
 </header>

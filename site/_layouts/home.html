@@ -1,30 +1,48 @@
 {% include header.html %}
-
 <main>
-	{% for section in page.sections %}
-	<section id="{{ section.name }}">
-		<h2>{{ section.title }}</h2>
-		<div class="sectionContent">
-		{{ section.content }}	
+	<section id="intro">
+		<h1>
+			<span>Creativity. </span>
+			<span>Understanding. </span>
+			<span>Collaboration. </span>
+		</h1>
+		<div class="introContent">
+			{{ content }}
 		</div>
+		<a href="/assets/resume/kylebatson-resume-2018-10-03.pdf" id="resume">Download Resume</a>
 	</section>
-	{% endfor %}
-	{{ content }}
-	
-	<!-- Portfolio -->
-	<section id="portfolio">
-		<h2>My Work</h2>
-		<nav class="sectionContent">
-			<ul>
-				{% for page in site.posts %}
-				<li class="portfolioLink">
-					<a href="{{ page.url }}" title="{{ page.title }}">{% for image in page.images limit:1 %}<img src="{% if page.thumb %}{{ page.thumb }}{% else %}{{ image.url }}{% endif %}" alt="{{ post.title }}" /></a>{% endfor %}
-				</li>
-				{% endfor %}
-			</ul>
-		</nav>
+	<section id="examples">
+		<h2>Work</h2>
+		{% for page in site.posts %}
+		<a class="portfolioItem" href="{{ page.url }}" title="{{ page.title }}">
+			<h3>{{ page.title }}</h3>
+			{% for image in page.images limit:1 %}<figure>
+				<img src="{% if page.thumb %}{{ page.thumb }}{% else %}{{ image.url }}{% endif %}" alt="{{ post.title }}" />
+			</figure>{% endfor %}
+		</a>
+		{% endfor %}
 	</section>
-	
+	<!-- <section id="caseStudies">
+		<div id="discovery">
+			<h2>Discovery</h2>
+			<div class="exampleContent">
+				<span class="shape"></span>
+				<p>No matter how aesthetically pleasing a design, if it was not born out of a deep understanding of the problbem to be solved, and the audience for which it is targeted, the design will never be as good as it could have been. I have always had a good ability to put myself into the shoes of others and to see things from their perspective. That helps greatly in tailoring my designs for the needs of my clients and users.</p>
+			</div>
+		</div>
+		<div id="iteration">
+			<h2>Iteration</h2>
+			<div class="exampleContent">
+				<p>No matter how aesthetically pleasing a design, if it was not born out of a deep understanding of the problbem to be solved, and the audience for which it is targeted, the design will never be as good as it could have been. I have always had a good ability to put myself into the shoes of others and to see things from their perspective. That helps greatly in tailoring my designs for the needs of my clients and users.</p>
+			</div>
+		</div>
+		<div id="another">
+			<h2>Another One</h2>
+			<div class="exampleContent">
+				<p>No matter how aesthetically pleasing a design, if it was not born out of a deep understanding of the problbem to be solved, and the audience for which it is targeted, the design will never be as good as it could have been. I have always had a good ability to put myself into the shoes of others and to see things from their perspective. That helps greatly in tailoring my designs for the needs of my clients and users.</p>
+			</div>
+		</div>
+	</section> -->
 </main>
 
 {% include footer.html %}
