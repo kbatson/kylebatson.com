@@ -45,44 +45,33 @@
 }
 
 .slideControl {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	text-indent: -999em;
-	position: relative;
-	border: none;
-	overflow: auto;
-}
-
-.slideControl:before {
-	position: absolute;
-	content: " ";
-	top: 5px;
-	left: 5px;
-	height: 10px;
-	width: 10px;
-	display: block;
-	background: #000000;
-}
-
-.slideControl:hover {
-	text-decoration: none;
-}
-
-.slideControl:hover:before {
-	background: #878787;
-}
-
-.slideControl.active:after {
-	position: absolute;
-	display: block;
-	content: " ";
-	height: 20px;
-	width: 20px;
-	top: 0;
-	left: 0;
+	height: 1.5rem;
+	width: 1.5rem;
+	border: 2px solid transparent;
 	box-sizing: border-box;
-	border: 2px solid black;
+	position: relative;
+	text-indent: -999rem;
+	margin-right: .5rem;
+
+	&:before {
+		content: "";
+		height: .75rem;
+		width: .75rem;
+		position: absolute;
+		top: .25rem;
+		left: .25rem;
+		background: #000000;
+	}
+
+	&:hover {
+		&:before {
+			background: #cccccc;
+		}
+	}
+
+	&.active {
+		border-color: #000000;
+	}
 }
 
 .slideshowDirection {

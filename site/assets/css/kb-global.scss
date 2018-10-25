@@ -7,6 +7,7 @@ html, body {
     padding: 0;
     font-size: 16px;
     line-height: 1rem;
+    overflow-x: hidden;
 }
 
 html {
@@ -86,6 +87,20 @@ header h1 {
     width: 200px;
     height: 52px;
     margin: 0;
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: -221px;
+        left: -750px;
+        background: $highlightColor;
+        transform: skewY(135deg);
+        height: 500px;
+        width: 1000px;
+    }
 }
 
 header h1 a {
@@ -95,31 +110,23 @@ header h1 a {
     text-indent: -999rem;
 }
 
-header:before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: -150px;
-    left: -400px;
-    background: #000000;
-    transform: skewY(135deg);
-    height: 500px;
-    width: 1000px;
-}
-
-header:after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: -150px;
-    left: -750px;
-    background: $highlightColor;
-    transform: skewY(135deg);
-    height: 500px;
-    width: 1000px;
-}
+// header:before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     z-index: -1;
+    
+//     //https://css-tricks.com/using-svg/
+//     //Solid
+//     background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
+//     //Outline
+//     // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
+//     top: -150px;
+//     left: -400px;
+//     height: 1000px;
+//     width: 1000px;
+//     transform: rotate(180deg);
+// }
 
 header nav {
     width: 40vw;
@@ -132,8 +139,8 @@ header nav ul {
     display: flex;
     list-style: none;
     height: 7rem;
-    // justify-content: space-between;
-    justify-content: stretch;
+    justify-content: space-between;
+    // justify-content: stretch;
     align-items: flex-end;
     margin: 0;
     padding: 0;
@@ -143,7 +150,7 @@ header nav ul {
         height: 7rem;
         display: block;
         width: 100%;
-        // width: 7rem;
+        margin-right: .25rem;
     }
 }
 
@@ -155,6 +162,14 @@ header nav ul li a {
     text-decoration: none;
     color: #000000;
     padding-bottom: .2rem;
+    padding-right: 1rem;
+    transform: skewX(135deg);
+    box-sizing: border-box;
+
+    span {
+        display: inline-block;
+        transform: skewX(45deg);
+    }
 }
 
 header nav ul li a:before {
@@ -162,11 +177,11 @@ header nav ul li a:before {
     content: "";
     position: absolute;
     bottom: 0;
-    right: -.5rem;
+    right: 0;
     height: 100%;
     width: 1px;
-    transform-origin: 0 100%;
-    transform: skewX(-45deg);
+    // transform-origin: 0 100%;
+    // transform: skewX(-45deg);
     background: $highlightColor;
     // border-top: .5rem solid transparent;
     // border-left: .5rem solid transparent;
@@ -183,10 +198,10 @@ header nav ul li a:after {
     height: 7rem;
     width: 0;
     top: 0;
-    left: 0;
+    right: 0;
     background: $highlightColor;
-    transform: skewX(-45deg);
-    transform-origin: 0 100%;
+    // transform: skewX(-45deg);
+    // transform-origin: 0 100%;
     transition: .2s all ease-in;
     z-index: -1;
 }
@@ -225,9 +240,6 @@ footer p {
 }
 
 @media only screen and (max-width: 820px) {
-    html {
-        // overflow-x: hidden;
-    }
     body {
         display: grid;
         grid-template-columns: 0px repeat(6, 1fr) 0px;
@@ -247,44 +259,52 @@ footer p {
         grid-gap: 1rem;
         
         &:before {
-            top: 0;
+            // top: 0;
         }
 
         h1 {
             grid-column: 2 / span 2;
+
+            &:after {
+
+            }
         }
 
         nav {
             width: auto;
-            grid-column: span 2 / 3;
+            grid-column: 1 / span 2;
             grid-row: 3 / span 4;
-            margin-right: -1rem;
 
             ul {
                 display: block;
                 height: 100%;
+                width: 70%;
+                margin: auto;
 
                 li {
                     display: block;
                     height: 4rem;
+                    margin: 0;
                     margin-bottom: 1rem;
 
                     a {
                         height: 100%;
                         line-height: 7rem;
                         color: #ffffff;
-                        padding-right: 4rem;
+                        padding-right: 1rem;
 
                         &:before {
-                            transform-origin: 100% 0;
+                            right: 0;
+                            transform-origin: 0 100%;
                         }
 
                         &:after {
+                            right: 0;
                             height: inherit;
                         }
 
                         &:hover:after {
-                            width: calc(100% - 4rem);
+                            width: calc(300%);
                         }
                     }
                 }

@@ -2,11 +2,10 @@
 ---
 
 @import "kb-global";
-@import "slideshow.css";
+@import "slideshow";
 
 body {
     overflow: auto;
-    margin-bottom: 6rem;
     background: transparent;
 
     &:after {
@@ -14,23 +13,20 @@ body {
         display: block;
         position: absolute;
         z-index: -1;
-        bottom: -50%;
-        right: -70%;
-        background: #000000;
-        border-left: 1px solid #000000;
-        transform: skewX(135deg);
-        height: 120%;
-        width: 100%;
+        //https://css-tricks.com/using-svg/
+        //Solid
+        background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
+        //Outline
+        // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
+        bottom: -100px;
+        right: -200px;
+        height: 900px;
+        width: 900px;
     }
 }
 
 header {
     height: 5rem;
-
-    &:before {
-        background: transparent;
-        border: 1px solid #000000;
-    }
 
     &:after {
         top: -200px;
@@ -49,7 +45,6 @@ main {
     margin-top: 6rem;
     // background: #ffffff;
     height: auto;
-    overflow: hidden;
 
     display: grid;
     grid-template-areas:
@@ -65,97 +60,27 @@ main {
     padding: 0 1rem;
 }
 
-// header nav {
-//     font-size: .8rem;
-//     width: calc(50% - 1rem);
+main:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -2;
+    
+    //https://css-tricks.com/using-svg/
+    //Solid
+    // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
+    //Outline
+    background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
+    top: -30rem;
+    left: -22rem;
+    height: 1000px;
+    width: 1000px;
+    transform: rotate(180deg);
+}
 
-//     ul {
-//         list-style: none;
-//         margin: 0;
-//         padding: 0;
-//         display: block;
-//         width: 100%;
-//     }
-
-//     li {
-//         display: inline-block;
-//         transform-origin: 50% 50%;
-//         transform: skewX(135deg);
-//         line-height: 2rem;
-//         height: 2rem;
-//         width: calc(40% - 3px);
-//         box-sizing: border-box;
-
-//         a {
-//             display: inline-block;
-//             transform: skewX(45deg);
-//             vertical-align: middle;
-//             text-align: center;
-//             width: 100%;
-            
-//             span {
-//                 display: inline-block;
-//                 overflow: hidden;
-//                 width: calc(100% - 1rem);
-//                 white-space: nowrap;
-//                 text-overflow: ellipsis;
-//                 box-sizing: border-box;
-
-//                 &:first-child {
-//                     padding-right: 1rem;
-//                 }
-
-//                 &:last-child {
-//                     padding-left: 1rem;
-//                 }
-//             }
-
-//             &:before {
-//                 content: "";
-//                 display: block;
-//                 position: absolute;
-//                 top: 0; 
-//                 left: 0;
-//                 width: 0;
-//                 height: 2rem;
-//                 background: $highlightColor;
-//                 transition: .1s width ease-in;
-//                 transform: skewX(135deg);
-//                 z-index: -1;
-//             }
-
-//             &:hover {
-//                 color: #ffffff;
-
-//                 &:before {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-
-//         &#prevItem {
-//             border-right: 2px solid $highlightColor;
-//             a span:before {
-//                 display: inline-block;
-//                 content: "\25C2\ ";
-//                 font-size: 1rem;
-//             }
-//         }
-//         &#nextItem {
-//             border-left: 2px solid $highlightColor;
-//             text-align: right;
-//             a span:before {
-//                 float: right;
-//                 display: inline-block;
-//                 content: " \25B8";
-//             }
-//         }
-//         &#home {
-//             width: calc(20% - 3px);
-//             text-align: center;
-//         }
-//     }
-// }
+header nav ul li a {
+    background: #ffffff;
+}
 
 main.portfolio h1 {
     font-weight: 700;
