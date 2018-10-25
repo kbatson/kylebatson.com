@@ -358,10 +358,14 @@
     }
 
     #intro:before {
-        top: -458px;
+        top: -10.5rem;
+        left: -1rem;
+        width: 100vw;
+        height: 100vw;
     }
 
     #intro:after {
+        display: none;
         bottom: -1255px;
         z-index: 0;
     }
