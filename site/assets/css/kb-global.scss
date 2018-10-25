@@ -248,14 +248,15 @@ footer p {
     }
 
     header {
-        grid-column: 2 / span 4;
-        grid-row: 3 / span 6;
+        grid-column: 2 / span 6;
+        grid-row: 2 / span 2;
         width: auto;
         margin: 0;
+        align-items: start;
 
         display: grid;
         grid-template-rows: repeat(6, 3rem);
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-gap: 1rem;
         
         &:before {
@@ -263,7 +264,7 @@ footer p {
         }
 
         h1 {
-            grid-column: 2 / span 2;
+            grid-column: 1 / span 4;
 
             &:after {
 
@@ -272,39 +273,41 @@ footer p {
 
         nav {
             width: auto;
-            grid-column: 1 / span 2;
-            grid-row: 3 / span 4;
+            grid-column: 1 / span 5;
+            grid-row: 2;
 
             ul {
-                display: block;
                 height: 100%;
-                width: 70%;
-                margin: auto;
+                margin: 0;
+                justify-content: unset;
 
                 li {
-                    display: block;
-                    height: 4rem;
+                    height: 2rem;
                     margin: 0;
                     margin-bottom: 1rem;
+                    width: auto;
 
                     a {
                         height: 100%;
-                        line-height: 7rem;
+                        line-height: 3rem;
                         color: #ffffff;
-                        padding-right: 1rem;
+                        padding: 0 1rem;
+                        text-align: center;
 
                         &:before {
-                            right: 0;
+                            right: .5rem;
+                            top: .5rem;
                             transform-origin: 0 100%;
                         }
 
                         &:after {
-                            right: 0;
+                            right: .5rem;
+                            top: .5rem;
                             height: inherit;
                         }
 
                         &:hover:after {
-                            width: calc(300%);
+                            width: 100%;
                         }
                     }
                 }
@@ -313,14 +316,16 @@ footer p {
     }
 
     main {
-        grid-column: 4 / span 5;
+        grid-column: 2 / span 6;
         grid-row: 5;
         width: auto;
+        padding: 0;
     }
 
     footer {
         grid-row: span 1 / 12;
-        grid-column: span 3 / 8;
+        grid-column: 2 / span 6;
         width: auto;
+        margin: 0;
     }
 }
