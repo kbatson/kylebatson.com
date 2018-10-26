@@ -93,6 +93,7 @@
 }
 
 #enlarge {
+    display: none;
     position: absolute;
     top: -1rem;
     right: 1rem;
@@ -140,6 +141,7 @@
 
 @media only screen and (min-width: 600px){
     #enlarge {
+        display: block;
         right: -1rem;
     }
 }
