@@ -3,3 +3,170 @@
 
 @import "kb-global";
 @import "slideshow";
+
+
+header h1 {
+    a {
+        background-image: url(/assets/images/kb-logo-black.svg);
+    }
+
+    &:before {
+        // Outline
+        background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
+    }
+}
+
+header nav ul li a {
+    color: #000000;
+}
+
+main {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-areas:
+        "headline"
+        "slideshow"
+        "article"
+        "skills";
+}
+
+main.portfolio h1 {
+    font-weight: 700;
+    margin: 0;
+    height: 100%;
+    font-size: 2rem;
+    line-height: 1.2em;
+    background: #ffffff;
+    margin-bottom: 1rem;
+
+    grid-area: headline;
+}
+
+.slideshow {
+    grid-area: slideshow;
+    width: calc(100vw - 2rem);
+}
+
+.slideshow figure.slide {
+    margin: 0;
+}
+
+.slideshow figcaption {
+    color: #4a4a4a;
+    font-size: .8rem;
+}
+
+.slideControl.active {
+    border-color: $highlightColor;
+}
+
+.slideControl:before {
+    background: $highlightColor;
+}
+
+article {
+    grid-area: article;
+}
+
+#skills {
+    grid-area: skills;
+    margin-bottom: 4rem;
+}
+
+#skills h2 {
+    display: inline-block;
+    position: relative;
+    font-family: "ltc-bodoni-175", "Times New Roman", serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 0;
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 2rem;
+        width: 0;
+        vertical-align: middle;
+        // position: absolute;
+        // top: -.5rem;
+        // right: 0;
+        border-right: 1px solid $highlightColor;
+        transform-origin: 0 100%;
+        transform: skewX(135deg);
+    }
+}
+
+#skills ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: .8em;
+
+    grid-area: skills;
+}
+
+@media only screen and (min-width: 600px){
+
+    main {
+        margin-top: 6rem;
+        // background: #ffffff;
+        height: auto;
+
+        display: grid;
+        grid-template-areas:
+            "headline headline slideshow slideshow"
+            "article article slideshow slideshow"
+            ". skills slideshow slideshow"
+            ". skills . .";
+        grid-template-columns: repeat(4, calc(25% - .5rem));
+        grid-template-rows: minmax(3rem, auto) auto auto;
+        align-content: start;
+        align-items: start;
+        grid-gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    main:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -2;
+        
+        //https://css-tricks.com/using-svg/
+        //Solid
+        // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
+        //Outline
+        background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
+        top: -30rem;
+        left: -22rem;
+        height: 1000px;
+        width: 1000px;
+        transform: rotate(180deg);
+    }
+
+    main.portfolio h1 {
+        font-weight: 700;
+        margin: 0;
+        height: 100%;
+        line-height: 1.2em;
+        background: #ffffff;
+
+        grid-area: headline;
+    }
+
+    main article {
+        border: 1rem solid #ffffff;
+        margin: -1rem 0 0 0;
+        background: #ffffff;
+
+        grid-area: article;
+    }
+
+    .slideshow {
+        width: 100%;
+    }
+
+    .slideshowWrapper {
+        width: 100%;
+    }
+}

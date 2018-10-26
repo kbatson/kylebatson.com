@@ -1,10 +1,17 @@
 $textColor: #000000;
 $highlightColor: rgb(255,82,71);
 
+* {
+    // outline: 1px dotted gray;
+}
+
 html {
     font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
+    font-weight: 100;
     font-size: 16px;
     line-height: 1.2em;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -15,8 +22,9 @@ h1, h2, h3 {
 
 body {
     margin: 0;
+    width: 100%;
     display: grid;
-    grid-template-columns: 0px repeat(6, auto) 0px;
+    grid-template-columns: 0px repeat(6, 1fr) 0px;
     grid-template-rows: 1rem repeat(auto-fill, 3rem);
     grid-gap: 1rem;
 }
@@ -26,7 +34,7 @@ header {
     grid-row: 2 / span 3;
 
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(6, minmax(1rem, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(3rem, auto));
     grid-gap: 1rem;
 }
@@ -44,9 +52,9 @@ header h1 {
         display: block;
         transform: rotate(180deg);
         position: absolute;
-        height: 50rem;
-        width: 50rem;
-        left: -28rem;
+        height: 100vw;
+        width: 100vw;
+        left: -1rem;
         top: -2rem;
         z-index: -2;
         clear: both;
@@ -71,6 +79,7 @@ header h1 {
         z-index: -1;
         clear: both;
         background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6Z3JheTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmJhY2tncm91bmQtdHJpYW5nbGUtZ3JleTwvdGl0bGU+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjY5MS4wNSAwIDY5MS4wNSA2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAiLz48L3N2Zz4=");
+        filter: brightness(0.8) sepia(1) hue-rotate(-45deg) saturate(3.5);
     }
 
     a {
@@ -97,9 +106,12 @@ header nav {
 
     a {
         display: inline-block;
+        font-family: "ltc-bodoni-175", "Times New Roman", serif;
+        font-weight: 100;
+        font-style: italic;
         transform-origin: 0 100%;
         transform: skewX(135deg);
-        border-right: 2px solid $highlightColor;
+        border-right: 1px solid $highlightColor;
         color: #ffffff;
         position: relative;
 
@@ -145,6 +157,12 @@ main {
 footer {
     grid-column: 2 / span 6;
     grid-row: span 1 / 7;
+    text-align: right;
+    font-size: .8em;
+}
+
+footer p {
+    margin: 0;
 }
 
 @media only screen and (min-width: 600px) {
@@ -153,11 +171,11 @@ footer {
     }
 
     header {
-        grid-row: 1 / span 3;
+        grid-row: 1 / span 4;
         grid-column: 2 / span 6;
 
         grid-template-columns: repeat(6, minmax(1rem, 8rem));
-        grid-template-rows: 1rem repeat(2, 3rem);
+        grid-template-rows: 1rem repeat(3, 3rem);
     }
 
     header nav {
@@ -183,6 +201,10 @@ footer {
             span {
                 height: inherit;
             }
+
+            &:hover:after {
+                width: calc(100% + 1rem);
+            }
         }
     }
 
@@ -191,6 +213,8 @@ footer {
 
         &:before {
             top: -7rem;
+            left: auto;
+            right: 30vw;
         }
     }
 
