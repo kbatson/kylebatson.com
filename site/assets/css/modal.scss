@@ -1,0 +1,145 @@
+#overlay {
+    background: rgba(0,0,0,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        ". close ."
+        "prev contents next"
+        ". contents .";
+    grid-template-columns: 5vw auto 5vw;
+    grid-template-rows: 3rem auto 3rem;
+}
+
+#overlayContents {
+    grid-area: contents;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay figure {
+    margin: 0;
+
+    figcaption {
+        color: #ffffff;
+    }
+
+    img {
+        max-height: 90vh;
+        max-width: 90vw;
+    }
+}
+
+#overlay #closeModal {
+    grid-area: close;
+    position: absolute;
+    top: 1rem;
+    right: -1rem;
+
+    border: none;
+    background: #000000;
+    font-family: inherit;
+    font-size: inherit;
+    color: $highlightColor;
+    border: 2px solid #ffffff;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+    cursor: pointer;
+
+    span {
+        margin-left: -6rem;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 4px;
+        position: absolute;
+        top: 2px;
+        right: calc(50% - 2px);
+        background: $highlightColor;
+        transform-origin: 50% 50%;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 4px;
+        position: absolute;
+        top: 2px;
+        right: calc(50% - 2px);
+        background: $highlightColor;
+        transform-origin: 50% 50%;
+        transform: rotate(135deg);
+    }
+
+    &:hover {
+        background: $highlightColor;
+
+        &:before, &:after {
+            background: #ffffff;
+        }
+    }
+}
+
+#enlarge {
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+
+    border: none;
+    background: #000000;
+    font-family: inherit;
+    font-size: inherit;
+    color: $highlightColor;
+    border: 2px solid #ffffff;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    text-indent: -999rem;
+
+    &:before {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 2px;
+        position: absolute;
+        top: 2px;
+        right: calc(50% - 1px);
+        background: #ffffff;
+        transform-origin: 50% 50%;
+        transform: rotate(90deg);
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 2px;
+        position: absolute;
+        top: 2px;
+        right: calc(50% - 1px);
+        background: #ffffff;
+    }
+
+    &:hover {
+        background: $highlightColor;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #enlarge {
+        right: -1rem;
+    }
+}
