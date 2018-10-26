@@ -48,6 +48,7 @@ main.portfolio h1 {
 .slideshow {
     grid-area: slideshow;
     width: 100vw;
+    max-height: unset;
     margin: 0 -1rem;
 }
 
@@ -71,15 +72,18 @@ main.portfolio h1 {
 }
 
 .slideshowControls {
-    margin-left: 1rem;
+    margin: 1rem;
 }
 
-.slideControl.active {
-    border-color: $highlightColor;
-}
+.slideControl {
+    margin-right: 0;
+    &.active {
+        border-color: $highlightColor;
+    }
 
-.slideControl:before {
-    background: $highlightColor;
+    &:before {
+        background: $highlightColor;
+    }
 }
 
 article {
