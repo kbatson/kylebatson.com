@@ -29,6 +29,15 @@ body {
     grid-gap: 1rem;
 }
 
+a {
+    color: $highlightColor;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 header {
     grid-column: 2 / span 6;
     grid-row: 2 / span 3;
