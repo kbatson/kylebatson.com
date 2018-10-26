@@ -49,7 +49,15 @@ main.portfolio h1 {
 }
 
 .slideshow figure.slide {
-    margin: 0;
+    margin: -1rem;
+    padding: 1rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+.slide img {
+    width: calc(100% - 2rem);
+    margin: auto;
 }
 
 .slideshow figcaption {
@@ -72,6 +80,8 @@ article {
 #skills {
     grid-area: skills;
     margin-bottom: 4rem;
+    margin-top: 4rem;
+    width: 50%;
 }
 
 #skills h2 {
@@ -169,5 +179,9 @@ article {
 
     .slideshowWrapper {
         width: 100%;
+    }
+
+    #skills {
+        width: auto;
     }
 }

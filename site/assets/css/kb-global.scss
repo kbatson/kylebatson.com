@@ -159,6 +159,33 @@ footer {
     grid-row: span 1 / 7;
     text-align: right;
     font-size: .8em;
+    position: relative;
+    color: #ffffff;
+    margin-top: 4rem;
+    padding-bottom: 3rem;
+    
+    a {
+        color: $highlightColor;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 75vw;
+        width: 75vw;
+        right: -1rem;
+        bottom: 0;
+        z-index: -2;
+        clear: both;
+        //https://css-tricks.com/using-svg/
+        // Solid
+        background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
+        // Grey
+        // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6Z3JheTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmJhY2tncm91bmQtdHJpYW5nbGUtZ3JleTwvdGl0bGU+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjY5MS4wNSAwIDY5MS4wNSA2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAiLz48L3N2Zz4=");
+        // Outline
+        // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
+    }
 }
 
 footer p {
@@ -224,5 +251,9 @@ footer p {
 
     footer {
         grid-column: 2 / span 6;
+
+        &:after {
+            right: -25vw;
+        }
     }
 }
