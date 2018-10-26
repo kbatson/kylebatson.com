@@ -89,6 +89,7 @@
     padding-right: 1rem;
     position: relative;
     margin-bottom: 3rem;
+    clear: both;
 
     &:after {
         content: "";
@@ -197,7 +198,7 @@
     }
 
     #examples {
-        grid-template-columns: repeat(2, minmax(6rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
         grid-gap: 1rem;
         position: relative;
         z-index: 1;
@@ -205,7 +206,7 @@
 
     #examples h2 {
         grid-row: 1;
-        grid-column: 1 / span 2;
+        grid-column: 1 / -1;
         width: calc(50% - .5rem);
         padding-right: 0;
         justify-self: end;

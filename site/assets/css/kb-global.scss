@@ -27,15 +27,12 @@ body {
     grid-template-columns: 0px repeat(6, 1fr) 0px;
     grid-template-rows: 1rem repeat(auto-fill, 3rem);
     grid-gap: 1rem;
+    overflow: hidden;
 }
 
 a {
     color: $highlightColor;
     text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 header {
