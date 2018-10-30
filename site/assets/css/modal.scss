@@ -46,10 +46,11 @@
     background: #000000;
     font-family: inherit;
     font-size: inherit;
-    color: $highlightColor;
+    font-weight: 700;
+    color: #ffffff;
     border: 2px solid #ffffff;
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 3rem;
     cursor: pointer;
 
@@ -109,15 +110,16 @@
     border-radius: 2rem;
     cursor: pointer;
     text-indent: -999rem;
+    box-sizing: border-box;
 
     &:before {
         content: "";
         display: block;
         height: 90%;
-        width: 2px;
+        width: 4px;
         position: absolute;
         top: 2px;
-        right: calc(50% - 1px);
+        right: calc(50% - 2px);
         background: #ffffff;
         transform-origin: 50% 50%;
         transform: rotate(90deg);
@@ -127,10 +129,10 @@
         content: "";
         display: block;
         height: 90%;
-        width: 2px;
+        width: 4px;
         position: absolute;
         top: 2px;
-        right: calc(50% - 1px);
+        right: calc(50% - 2px);
         background: #ffffff;
     }
 

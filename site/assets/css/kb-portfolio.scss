@@ -149,6 +149,7 @@ article {
         align-items: start;
         grid-gap: 1rem;
         padding: 0 1rem;
+        position: relative;
     }
 
     main:before {
@@ -213,7 +214,38 @@ article {
         }
     }
 
+    #enlarge {
+        grid-area: slideshow;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
     #skills {
         width: auto;
+    }
+
+    #overlay .slideshow {
+        width: 90vw;
+        margin: 0;
+        height: 90vh;
+        align-self: start;
+    }
+
+    #overlay .slideshow {
+        .slideshowWrapper {
+            height: calc(100% - 3rem);
+        }
+
+        figure.slide {
+            img {
+                width: auto;
+            }
+
+            figcaption {
+                color: #000000;
+                text-align: center;
+            }
+        }
     }
 }
