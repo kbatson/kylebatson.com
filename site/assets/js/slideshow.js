@@ -1,92 +1,94 @@
 //** Slideshow **//
-var numSlides = 0;
-var slideIndex = 0;
-var slideWidth = 0;
-var slideshowPosition = 0;
-var resizeSlides = function(){
-	slideWidth = $(".slideshow").width();
-	//$(".slideshow").width(slideWidth);
-	$(".slideshow .slide").width(slideWidth);
-	setSlideshowDimensions();
-	switchSlide(slideIndex);
-}
-var setSlideshowDimensions = function(){
-	numSlides = $(".slideshow .slide").length;
-	$(".slideshowContent").width(numSlides*slideWidth);
-}
-var createSlideshowControls = function(){
-	console.log('createcontrols');
-	$(".slideshowControls").html("");
-	if(numSlides > 1){
-		for($i = 0; $i < numSlides; $i++){
-			if($i == 0){
-				$(".slideshowControls").append("<a href='#' class='slideControl active' data-slide='" + $i + "'>Slide " + 1 + "</a>");
-			} else {
-				$(".slideshowControls").append("<a href='#' class='slideControl' data-slide='" + $i + "'>Slide " + eval($i+1) + "</a>");
-			}
+var numSlides = [];
+var slideshowWidth = [];
+var activeSlide = [];
+function initializeSlideshow(additional){
+	$(".slideshow").each(function(i){
+		$(this).attr("data-index", i);
+
+		numSlides[i] = $(this).find('.slide').length;
+		if(!additional){ //Upon initial creation, set to 0, otherwise use set value in modal.js
+			activeSlide[i] = 0;
 		}
-	}
-}
-var removeSlideshowControls = function(){
-	$(".slideshowControls").html("");
-}
-
-var selectSlide = function(element){ //Get proper index for any selected slide
-	slideIndex = parseInt($(element).attr("data-slide"));
-	switchSlide(slideIndex);
-}
-
-//** Switch Slides**//
-var switchSlide = function(slideIndex){ //Switch to specified slide
-	console.log('slideIndex', slideIndex, 'numSlides', numSlides);
-	if(slideIndex == numSlides){
-		console.log('in condition?')
-		slideIndex = 0;
-		console.log('after set to 0', slideIndex);
-	}
-	slideshowPosition = eval(0 - $(".slide:eq(" + slideIndex + ")").position().left);
-	
-	$(".slide").removeClass("activeSlide");
-	$(".slide:eq(" + slideIndex + ")").addClass("activeSlide");
-	
-	$(".slideshowContent").css("left", slideshowPosition);
-	$(".slideControl").each(function(){
-		$(this).removeClass("active");
 	});
-	$(".slideControl:eq(" + slideIndex + ")").addClass("active");
-	console.log('checking slideIndex before return', slideIndex);
+}
+
+function generateControls(){
+	$(".slideshow").each(function(i){
+		if(numSlides[i] > 1){
+			for(var j = 0; j < numSlides[i]; j++){
+				if(j == 0){
+					$(this).find(".slideshowControls").append("<a href='#' class='slideControl active' data-slide='" + j + "'>Slide " + 1 + "</a>");
+				} else {
+					$(this).find(".slideshowControls").append("<a href='#' class='slideControl' data-slide='" + j + "'>Slide " + eval(j+1) + "</a>");
+				}
+			}
+		}	
+	})
+}
+
+function resizeSlides(){
+	$(".slideshow").each(function(i){
+		$(this).find(".slideshowContent").width($(this).width() * numSlides[i]);
+		$(this).find(".slide").width($(this).width());
+		switchSlides(i, activeSlide[i], false);
+	});
+}
+
+function slideshowIndex(slideshow){
+	return $(slideshow).parents(".slideshow").attr("data-index");
+}
+
+//Navigate to slide and update navigation
+function switchSlides(slideshow, slide, animate){
+	var slideshowPosition = $(".slideshow:eq(" + slideshow + ")").find(".slide:eq(" + activeSlide[slideshow] + ")").position().left;
+	if(animate == true){
+		$(".slideshow:eq(" + slideshow + ")").find(".slideshowContent").css("transition", "left .5s ease-in").css("left", 0 - slideshowPosition);
+	} else { //Used when resizing to not show weird resizing artifacts
+		$(".slideshow:eq(" + slideshow + ")").find(".slideshowContent").css("transition", "none").css("left", 0 - slideshowPosition);
+	}
+	$(".slideshow:eq(" + slideshow + ") .slideControl").removeClass("active");
+	$(".slideshow:eq(" + slideshow + ") .slideControl:eq(" + activeSlide[slideshow] + ")").addClass("active");
+}
+
+//Pick a slide with nav/prev controls
+function slideDirection(slideshow, direction){
+	if(direction == "next" && activeSlide[slideshow] < (numSlides[slideshow] - 1)){
+		activeSlide[slideshow] = activeSlide[slideshow] + 1;
+	} else if(direction == "prev" && activeSlide[slideshow] > (0 - numSlides[slideshow] + 1)){
+		activeSlide[slideshow] = activeSlide[slideshow] - 1;
+	} else {
+		activeSlide[slideshow] = 0;
+	}
+	switchSlides(slideshow, activeSlide[slideshow], true);
 }
 
 $(document).ready(function(){
+	initializeSlideshow();
+	generateControls();
 	resizeSlides();
-	createSlideshowControls();
+
+	$("body").on("click", ".slide", function(){
+		slideDirection(slideshowIndex(this), "next");
+	});
+
+	$("body").on("click", ".nextSlide, .previousSlide", function(){
+		if($(this).hasClass("nextSlide")){
+			slideDirection(slideshowIndex(this), "next");
+		} else {
+			slideDirection(slideshowIndex(this), "prev");
+		}
+		return false;
+	});
+
+	$("body").on("click", ".slideControl", function(){
+		activeSlide[slideshowIndex(this)] = parseInt($(this).attr("data-slide"));
+		switchSlides(slideshowIndex(this), activeSlide[slideshowIndex(this)], true);
+		return false;
+	});
 
 	$(window).on('resize', function(){ //Ensure dimensions are updated if window is resized
 		resizeSlides();
-		//createSlideshowControls();
-	});
-	
-	$("body").on('click', '.slideControl', function(e){ //Navigate between slides by clicking on slide controls
-		selectSlide($(this));
-		return false;
-	});
-	
-	$("body").on('click', '.slide', function(){ //Navigate between slides by clicking on the slide itself
-		slideIndex = $(this).index() +1;
-		switchSlide(slideIndex);
-		return false;
-	});
-
-	$("body").on('click', '.nextSlide', function(){
-		slideIndex = $(".activeSlide").index() +1;
-		switchSlide(slideIndex);
-		return false;
-	});
-
-	$("body").on('click', '.previousSlide', function(){
-		slideIndex = $(".activeSlide").index() -1;
-		switchSlide(slideIndex);
-		return false;
 	});
 
 	$(".slide").swipe({
@@ -94,11 +96,10 @@ $(document).ready(function(){
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
         	console.log("You swiped " + direction );
         	if(direction == "left"){
-        		slideIndex = slideIndex + 1;
+        		slideDirection(slideshowIndex(this), "next");
         	} else if(direction == "right") {
-        		slideIndex = slideIndex - 1;
+        		slideDirection(slideshowIndex(this), "prev");
         	}
-        	switchSlide(slideIndex);
         },
         //Default is 75px, set to 0 for demo so any distance triggers swipe
         threshold:75

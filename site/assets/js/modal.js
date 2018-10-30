@@ -1,7 +1,9 @@
 var createModal = function(){
-    var overlay = $("<div id='overlay'><div id='overlayContents'><figure></figure></div></div>");
+    var overlay = $("<div id='overlay'><div id='overlayContents'></div></div>");
     var closeButton = $("<button id='closeModal'><span>Close</span></button>");
     $(overlay).appendTo("body");
+    attachSlideshow();
+
     $(closeButton).appendTo(overlay);
     $("body").addClass("modalOpen");
 }
@@ -9,16 +11,29 @@ var createModal = function(){
 var closeModal = function(){
     $(overlay).remove();
     $("body").removeClass("modalOpen");
+    // $('.slideshow').each(function(i){
+    //     //slideIndex[i] = 0;
+    //     resizeSlides();
+    // });
 }
 
 var attachImage = function(){
     $(".activeSlide").contents().clone().appendTo("#overlayContents figure");
 }
 
+var attachSlideshow = function(){
+    $(".slideshow").clone().appendTo("#overlayContents");
+    $("#overlayContents .slideshow").attr("data-index", 1);
+    activeSlide[1] = activeSlide[0];
+    initializeSlideshow(true); //Pass value only if a new slideshow is being added
+    resizeSlides();
+}
+
 $(document).ready(function(){
 	$("#enlarge").on('click', function(){
         createModal();
-        attachImage();
+        // attachImage();
+        // attachSlideshow();
         return false;
     });
 
