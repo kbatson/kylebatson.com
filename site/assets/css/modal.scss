@@ -48,48 +48,32 @@
     font-size: inherit;
     font-weight: 700;
     color: #ffffff;
-    border: 2px solid #ffffff;
     height: 2rem;
     width: 2rem;
     border-radius: 3rem;
     cursor: pointer;
+    padding: 0;
 
     span {
         margin-left: -6rem;
     }
 
     &:before {
-        content: "";
+        content: "\00D7";
         display: block;
-        height: 90%;
-        width: 4px;
+        height: inherit;
+        width: inherit;
         position: absolute;
-        top: 2px;
-        right: calc(50% - 2px);
-        background: $highlightColor;
-        transform-origin: 50% 50%;
-        transform: rotate(45deg);
-    }
-
-    &:after {
-        content: "";
-        display: block;
-        height: 90%;
-        width: 4px;
-        position: absolute;
-        top: 2px;
-        right: calc(50% - 2px);
-        background: $highlightColor;
-        transform-origin: 50% 50%;
-        transform: rotate(135deg);
+        top: 0;
+        left: 0;
+        color: #ffffff;
+        text-indent: 0;
+        font-size: 2rem;
+        line-height: 1em;
     }
 
     &:hover {
         background: $highlightColor;
-
-        &:before, &:after {
-            background: #ffffff;
-        }
     }
 }
 
@@ -104,36 +88,26 @@
     font-family: inherit;
     font-size: inherit;
     color: $highlightColor;
-    border: 2px solid #ffffff;
     height: 2rem;
     width: 2rem;
     border-radius: 2rem;
     cursor: pointer;
     text-indent: -999rem;
     box-sizing: border-box;
+    padding: 0;
 
     &:before {
-        content: "";
+        content: "\002B";
         display: block;
-        height: 90%;
-        width: 4px;
+        height: inherit;
+        width: inherit;
         position: absolute;
-        top: 2px;
-        right: calc(50% - 2px);
-        background: #ffffff;
-        transform-origin: 50% 50%;
-        transform: rotate(90deg);
-    }
-
-    &:after {
-        content: "";
-        display: block;
-        height: 90%;
-        width: 4px;
-        position: absolute;
-        top: 2px;
-        right: calc(50% - 2px);
-        background: #ffffff;
+        top: 0;
+        left: 0;
+        color: #ffffff;
+        text-indent: 0;
+        font-size: 2rem;
+        line-height: 1em;
     }
 
     &:hover {
