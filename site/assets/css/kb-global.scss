@@ -96,7 +96,7 @@ header h1 {
 }
 
 header nav {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 5;
     grid-row: 2 / span 2;
     height: 3rem;
 
@@ -108,18 +108,23 @@ header nav {
 
     li {
         display: inline-block;
+        min-width: 3rem;
     }
 
     a {
         display: inline-block;
+        transform-origin: 0 100%;
+        transform: skewX(135deg);
+        width: 100%;
+        position: relative;
+
         font-family: "ltc-bodoni-175", "Times New Roman", serif;
         font-weight: 100;
         font-style: italic;
-        transform-origin: 0 100%;
-        transform: skewX(135deg);
+        text-align: center;
+        
         border-right: 1px solid $highlightColor;
         color: #ffffff;
-        position: relative;
 
         span {
             display: inline-block;
@@ -224,6 +229,7 @@ footer p {
 
         li {
             height: inherit;
+            width: 30%;
         }
 
         a {
@@ -236,7 +242,7 @@ footer p {
             }
 
             &:hover:after {
-                width: calc(100% + 1rem);
+                width: 100%;
             }
         }
     }
