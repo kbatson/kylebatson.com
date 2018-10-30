@@ -152,24 +152,6 @@ article {
         position: relative;
     }
 
-    main:before {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: -2;
-        
-        //https://css-tricks.com/using-svg/
-        //Solid
-        // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
-        //Outline
-        background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
-        top: -30rem;
-        left: -22rem;
-        height: 1000px;
-        width: 1000px;
-        transform: rotate(180deg);
-    }
-
     main.portfolio h1 {
         font-weight: 700;
         margin: 0;
