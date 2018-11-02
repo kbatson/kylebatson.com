@@ -4,38 +4,29 @@ $(document).ready(function(){
 	var scrollOffset = 0;
 	var scrollColor = "";
 	
-	$("#nightToggle").on('click', function(){
-		if($("body").hasClass("night")){
-			$("body").removeClass("night");
-		} else {
-			$("body").addClass("night");
-		}
-	});
-	
 	$(window).scroll(function(){
-		if($('body').hasClass('night')){
-			scrollOffset = $(window).scrollTop() / ($('body').height() - $(window).height());
-			scrollColor = getColorForPercentage(scrollOffset);
-			$("#scrollPosition").html(scrollOffset).css("background-color", scrollColor);
-		
-			var colorTransition = function(link){
-				scrollOffset = ($(link).offset().top - $(window).scrollTop()) / $(window).height();
-				inverseScrollOffset = 1 - scrollOffset;
-				scrollColor = getColorForPercentage(scrollOffset);
-				inverseScrollColor = getColorForPercentage(inverseScrollOffset);
-				
-				if($(link).attr('id') == "resumeDownload"){
-					console.log('scrollOffset', scrollOffset, 'inverseScrollOffset', inverseScrollOffset);
-					$(link).css("background-color", scrollColor);
-				} else {
-					$(link).css("color", scrollColor);
-				}
-			}
-			
-			$('a').each(function(){
-				colorTransition($(this));
-			});
+		scrollOffset = $(window).scrollTop();
+		if(scrollOffset > 50){
+			$("body").addClass("fixedHeader");
+		} else {
+			$("body").removeClass("fixedHeader");
 		}
+		// scrollColor = getColorForPercentage(scrollOffset);
+		// $("#scrollPosition").html(scrollOffset).css("background-color", scrollColor);
+		
+		// var colorTransition = function(link){
+		// 	scrollOffset = ($(link).offset().top - $(window).scrollTop()) / $(window).height();
+		// 	inverseScrollOffset = 1 - scrollOffset;
+		// 	scrollColor = getColorForPercentage(scrollOffset);
+		// 	inverseScrollColor = getColorForPercentage(inverseScrollOffset);
+			
+		// 	if($(link).attr('id') == "resumeDownload"){
+		// 		console.log('scrollOffset', scrollOffset, 'inverseScrollOffset', inverseScrollOffset);
+		// 		$(link).css("background-color", scrollColor);
+		// 	} else {
+		// 		$(link).css("color", scrollColor);
+		// 	}
+		// }
 	});
 
     var percentColors = [
@@ -65,5 +56,5 @@ $(document).ready(function(){
 	
 	//** Date **//
 	var thisYear = new Date().getFullYear();
-	$("#year").html(thisYear);\
+	$("#year").html(thisYear);
 });

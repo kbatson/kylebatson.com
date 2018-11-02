@@ -237,21 +237,6 @@ footer p {
                 height: inherit;
             }
 
-            &:after {
-                content: "";
-                display: block;
-                height: 0;
-                width: 0;
-                position: absolute;
-                bottom: 0;
-                right: -.5rem;
-                border-top: .5rem solid $highlightColor;
-                border-right: .5rem solid transparent;
-                border-bottom: .5rem solid transparent;
-                border-left: .5rem solid $highlightColor;
-                transform: skewX(45deg);
-            }
-
             &:hover:before {
                 width: 100%;
             }
@@ -275,6 +260,51 @@ footer p {
 
     main {
         grid-column: 2 / span 6;
+    }
+
+    body.fixedHeader {
+        grid-template-rows: 4rem repeat(auto-fill, 3rem);
+
+        header {
+            grid-template-rows: 4rem;
+            grid-template-columns: minmax(5vw, auto) repeat(6, minmax(1rem, 8rem)) minmax(5vw, auto);
+            background-color: rgba(0,0,0, .9);
+            height: 4rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            overflow: hidden;
+            z-index: 2;
+            transition: all .4s linear;
+
+            h1 {
+                grid-row: 1;
+                grid-column: 2 / span 3;
+                transition: all .4s linear;
+                margin-left: 0;
+                margin-top: .5rem;
+            }
+
+            nav {
+                grid-row: 1;
+                grid-column: span 3 / 8;
+                margin-left: 0;
+
+                a {
+                    color: #ffffff;
+                    line-height: 6rem;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        main {
+            grid-row: 3;
+        }
     }
 
     footer {
