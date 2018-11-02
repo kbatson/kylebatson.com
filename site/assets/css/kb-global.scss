@@ -133,7 +133,7 @@ header nav {
             padding: 0 0 0 1rem;
         }
 
-        &:after {
+        &:before {
             content: "";
             display: block;
             height: 100%;
@@ -237,8 +237,28 @@ footer p {
                 height: inherit;
             }
 
-            &:hover:after {
+            &:after {
+                content: "";
+                display: block;
+                height: 0;
+                width: 0;
+                position: absolute;
+                bottom: 0;
+                right: -.5rem;
+                border-top: .5rem solid $highlightColor;
+                border-right: .5rem solid transparent;
+                border-bottom: .5rem solid transparent;
+                border-left: .5rem solid $highlightColor;
+                transform: skewX(45deg);
+            }
+
+            &:hover:before {
                 width: 100%;
+            }
+
+            &:hover:after {
+                border-top-color: #ffffff;
+                border-left-color: #ffffff;
             }
         }
     }
