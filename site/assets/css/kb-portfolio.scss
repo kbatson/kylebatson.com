@@ -50,6 +50,20 @@ main.portfolio h1 {
     width: 100vw;
     max-height: unset;
     margin: -.8rem 0 0 -1rem;
+
+    &:before {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 100%;
+        background: #ffffff;
+        -webkit-clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+
+        position: absolute;
+        top: -1rem;
+        left: 0;
+    }
 }
 
 .slideshow figure.slide {
@@ -172,7 +186,7 @@ article {
 
     .slideshow {
         width: 100%;
-        margin-top: 0;
+        margin: 0;
     }
 
     .slideshowWrapper {
@@ -191,7 +205,7 @@ article {
     #enlarge {
         grid-area: slideshow;
         position: absolute;
-        top: 0;
+        top: -1rem;
         right: 0;
     }
 
@@ -220,6 +234,23 @@ article {
                 color: #000000;
                 text-align: center;
             }
+        }
+    }
+
+    #overlay #closeModal {
+        padding: 0 2rem 0 .5rem;
+        width: auto;
+        top: 0;
+        right: 0;
+        border-radius: 0;
+
+        span {
+            margin: 0;
+        }
+
+        &:before {
+            left: auto;
+            right: .5rem;
         }
     }
 }

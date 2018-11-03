@@ -19,6 +19,7 @@ html {
     width: 100%;
     overflow-x: hidden;
     color: #ffffff;
+    background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 h1, h2, h3 {
@@ -39,7 +40,7 @@ body {
     grid-template-rows: 1rem repeat(auto-fill, 3rem);
     grid-gap: 1rem;
     overflow: hidden;
-    background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
 }
 
 a {
@@ -59,31 +60,12 @@ header {
 
 header h1 {
     margin: 0;
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 3;
     grid-row: 1;
     position: relative;
     font-size: 3rem;
     line-height: 1em;
-
-    // &:before {
-    //     content: "";
-    //     display: block;
-    //     transform: rotate(180deg);
-    //     position: absolute;
-    //     height: 100vw;
-    //     width: 100vw;
-    //     left: -1rem;
-    //     top: -2rem;
-    //     z-index: -2;
-    //     clear: both;
-    //     //https://css-tricks.com/using-svg/
-    //     // Solid
-    //     background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZTwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAgNjkxLjA1IDY5MS4wNSAwIi8+PC9zdmc+");
-    //     // Grey
-    //     // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6Z3JheTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmJhY2tncm91bmQtdHJpYW5nbGUtZ3JleTwvdGl0bGU+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjY5MS4wNSAwIDY5MS4wNSA2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAiLz48L3N2Zz4=");
-    //     // Outline
-    //     // background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
-    // }
+    z-index: 1;
 
     &:before {
         content: "";
@@ -121,7 +103,7 @@ header h1 {
 
     a {
         display: block;
-        background: url(/assets/images/kb-logo-white.svg) no-repeat;
+        background: url(/assets/images/kb-logo-color.svg) no-repeat;
         text-indent: -999rem;
     }
 }
@@ -154,6 +136,8 @@ header nav {
         letter-spacing: 3px;
         font-weight: 400;
         text-align: center;
+        font-size: .8rem;
+        white-space: nowrap;
         
         border-right: 1px solid $highlightColor;
         color: #ffffff;
@@ -165,7 +149,7 @@ header nav {
             padding: 0 0 0 1rem;
         }
 
-        &:before {
+        &:after {
             content: "";
             display: block;
             height: 100%;
@@ -191,6 +175,7 @@ header nav {
 main {
     grid-column: 2 / span 6;
     grid-row: 5;
+    z-index: 1;
 }
 
 footer {
@@ -202,7 +187,6 @@ footer {
     color: #ffffff;
     margin-top: 4rem;
     padding-bottom: 3rem;
-    z-index: 1;
     
     a {
         color: $highlightColor;
@@ -247,6 +231,8 @@ footer p {
         grid-row: 1 / span 3;
         grid-column: span 3 / 7;
         height: 100%;
+        width: 120%;
+        margin-left: -20%;
 
         ul {
             height: inherit;
@@ -265,19 +251,24 @@ footer p {
             line-height: 17rem;
             background: linear-gradient(35deg, rgba(115, 31, 55, 0) 0%, rgba(115, 31, 55, 0) 30%, #951f37 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             border-right: none;
+            text-align: right;
 
             span {
                 height: inherit;
             }
 
-            &:hover:before {
+            &:hover:after {
                 width: 100%;
             }
+        }
 
-            &:hover:after {
-                border-top-color: #ffffff;
-                border-left-color: #ffffff;
-            }
+        li#prevItem a span:before {
+            content: "\25C2";
+            font-size: 1.1rem;
+        }
+
+        li#nextItem a span:after {
+            content: "\25B8";
         }
     }
 
@@ -287,7 +278,7 @@ footer p {
         &:before {
             top: -7rem;
             left: auto;
-            right: 30vw;
+            right: -13vw;
         }
     }
 

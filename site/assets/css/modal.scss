@@ -38,10 +38,9 @@
 }
 
 #overlay #closeModal {
-    grid-area: close;
     position: absolute;
     top: 1rem;
-    right: -1rem;
+    right: 1rem;
 
     border: none;
     background: #000000;
@@ -74,7 +73,12 @@
     }
 
     &:hover {
-        background: $highlightColor;
+        background: #ffffff;
+        color: #000000;
+
+        &:before {
+            color: #000000;
+        }
     }
 }
 
@@ -91,7 +95,6 @@
     color: $highlightColor;
     height: 2rem;
     width: 2rem;
-    border-radius: 2rem;
     cursor: pointer;
     text-indent: -999rem;
     box-sizing: border-box;

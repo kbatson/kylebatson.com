@@ -25,9 +25,9 @@
 			<li><a href="/assets/resume/kylebatson-resume-2018-11-01.pdf"><span>Resume</span></a></li>
 			<li><a href="mailto:kyledbatson@gmail.com"><span>Contact</span></a></li>
 			{% else %}
-			{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}"><span>&#9666; Previous</span></a></li>{% endif %}
+			{% if page.next %}<li id="prevItem"><a href="{{ page.next.url }}"><span>Previous</span></a></li>{% endif %}
 			<li id="home"><a href="/"><span>Home</span></a></li>
-			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}"><span>Next &#9656;</span></a></li>{% endif %}{% endif %}
+			{% if page.previous %}<li id="nextItem"><a href="{{ page.previous.url }}"><span>Next</span></a></li>{% endif %}{% endif %}
 		</ul>
 	</nav>
 </header>
