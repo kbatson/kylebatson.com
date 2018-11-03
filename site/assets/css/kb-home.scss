@@ -11,10 +11,6 @@
 
     h1 {
         font-size: 2rem;
-        font-family: din-2014, sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 400;
 
         span {
             display: inline-block;
@@ -24,9 +20,13 @@
             padding: .2rem .5rem;
 
             &:last-child {
-                color: $highlightGradientStart;
+                color: $highlightGradientEnd;
             }
         }
+    }
+
+    p:first-child {
+        margin-top: 0;
     }
 }
 
@@ -95,10 +95,6 @@
 
 #examples h2 {
     text-align: right;
-    font-family: din-2014, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 400;
     font-size: 2rem;
     padding-right: 1rem;
     position: relative;
@@ -124,7 +120,8 @@
     text-decoration: none;
     cursor: pointer;
 
-    padding: 1rem;
+    padding: 0rem 1rem;
+    margin-bottom: 1rem;
     background: #ffffff;
     position: relative;
     border-bottom: 2px solid transparent;
@@ -138,6 +135,20 @@
         -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
         -moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
         box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 100%;
+        background: #ffffff;
+        -webkit-clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+
+        position: absolute;
+        top: -1rem;
+        left: 0;
     }
 
     figure {
@@ -202,7 +213,7 @@
 
     #intro h1 {
         grid-area: headline;
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     }
 
     .introContent {

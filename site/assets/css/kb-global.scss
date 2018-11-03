@@ -18,12 +18,17 @@ html {
     line-height: 1.2em;
     width: 100%;
     overflow-x: hidden;
+    color: #ffffff;
 }
 
 h1, h2, h3 {
     margin: 0;
     font-size: 1rem;
     line-height: 1em;
+    font-family: din-2014, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
 }
 
 body {

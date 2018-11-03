@@ -23,7 +23,6 @@ main.portfolio h1 {
     height: 100%;
     font-size: 2rem;
     line-height: 1.2em;
-    background: #ffffff;
     margin-bottom: 1rem;
     text-align: right;
     width: 70%;
@@ -56,7 +55,6 @@ main.portfolio h1 {
 .slideshow figure.slide {
     margin: 0;
     padding: 0;
-    background: #ffffff;
     text-align: center;
 }
 
@@ -101,9 +99,6 @@ article {
 #skills h2 {
     display: inline-block;
     position: relative;
-    font-family: "ltc-bodoni-175", "Times New Roman", serif;
-    font-weight: 100;
-    font-style: italic;
     font-size: 1rem;
     margin-top: 0;
     &:after {
@@ -157,7 +152,6 @@ article {
         margin: 0;
         height: 100%;
         line-height: 1.2em;
-        background: #ffffff;
         text-align: left;
         padding-left: 1rem;
         padding-top: 1rem;
@@ -172,9 +166,8 @@ article {
     }
 
     main article {
-        border: 1rem solid #ffffff;
+        border: 1rem solid transparent;
         margin: -1rem 0 0 0;
-        background: #ffffff;
 
         grid-area: article;
     }
