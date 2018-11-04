@@ -21,15 +21,17 @@ main.portfolio h1 {
     font-weight: 700;
     margin: 0;
     height: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.2em;
-    background: #ffffff;
     margin-bottom: 1rem;
+    padding-right: 1rem;
     text-align: right;
     width: 70%;
     justify-self: end;
     position: relative;
     border-top: 2px solid $highlightColor;
+    background: #ffffff;
+    color: $primaryGradientStart;
 
     grid-area: headline;
 
@@ -37,12 +39,24 @@ main.portfolio h1 {
         content: "";
         display: block;
         position: absolute;
+        height: 8rem;
+        width: 8rem;
+        left: -8rem;
         top: 0;
-        left: -3rem;
-        border-top: 1.5rem solid transparent;
-        border-left: 1.5rem solid transparent;
-        border-bottom: 1.5rem solid #ffffff;
-        border-right: 1.5rem solid #ffffff;
+        z-index: -1;
+        clear: both;
+        background: #ffffff;
+        // background: linear-gradient(to bottom, $highlightGradientStart 0%, $highlightGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+    }
+}
+
+footer {
+
+    &:after {
+        display: block;
     }
 }
 
@@ -51,12 +65,25 @@ main.portfolio h1 {
     width: 100vw;
     max-height: unset;
     margin: -.8rem 0 0 -1rem;
+
+    &:before {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 100%;
+        background: #ffffff;
+        -webkit-clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+
+        position: absolute;
+        top: -1rem;
+        left: 0;
+    }
 }
 
 .slideshow figure.slide {
     margin: 0;
     padding: 0;
-    background: #ffffff;
     text-align: center;
 }
 
@@ -101,9 +128,6 @@ article {
 #skills h2 {
     display: inline-block;
     position: relative;
-    font-family: "ltc-bodoni-175", "Times New Roman", serif;
-    font-weight: 100;
-    font-style: italic;
     font-size: 1rem;
     margin-top: 0;
     &:after {
@@ -157,10 +181,11 @@ article {
         margin: 0;
         height: 100%;
         line-height: 1.2em;
-        background: #ffffff;
         text-align: left;
-        padding-left: 1rem;
         padding-top: 1rem;
+        padding-right: 0;
+        background: none;
+        color: unset;
         box-sizing: border-box;
         width: 100%;
 
@@ -172,16 +197,14 @@ article {
     }
 
     main article {
-        border: 1rem solid #ffffff;
         margin: -1rem 0 0 0;
-        background: #ffffff;
 
         grid-area: article;
     }
 
     .slideshow {
         width: 100%;
-        margin-top: 0;
+        margin: 0;
     }
 
     .slideshowWrapper {
@@ -200,7 +223,7 @@ article {
     #enlarge {
         grid-area: slideshow;
         position: absolute;
-        top: 0;
+        top: -1rem;
         right: 0;
     }
 
@@ -229,6 +252,21 @@ article {
                 color: #000000;
                 text-align: center;
             }
+        }
+    }
+
+    #overlay #closeModal {
+        padding: 0 2rem 0 .5rem;
+        width: auto;
+        border-radius: 0;
+
+        span {
+            margin: 0;
+        }
+
+        &:before {
+            left: auto;
+            right: .5rem;
         }
     }
 }

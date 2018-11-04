@@ -4,8 +4,8 @@
 @import "kb-global";
 
 #intro {
-    background: #ffffff;
-    padding: 1rem;
+    color: #ffffff;
+    padding: 0 1rem 1rem 0;
     position: relative;
     margin-bottom: 7rem;
 
@@ -13,8 +13,26 @@
         font-size: 2rem;
 
         span {
-            display: block;
+            display: inline-block;
+            background: #ffffff;
+            color: $primaryGradientStart;
+            margin-bottom: .5rem;
+            padding: .2rem .5rem;
+
+            &:last-child {
+                color: $highlightGradientEnd;
+            }
         }
+    }
+
+    p strong {
+        font-family: din-2014, sans-serif;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    p:first-child {
+        margin-top: 0;
     }
 }
 
@@ -24,9 +42,10 @@
     color: #ffffff;
     height: 3rem;
     line-height: 3rem;
-    font-family: "ltc-bodoni-175", "Times New Roman", serif;
-    font-weight: 100;
-    font-style: italic;
+    font-family: din-2014, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
     transform-origin: 0 100%;
     transform: skewX(135deg);
     position: relative;
@@ -34,6 +53,7 @@
     text-align: right;
     padding-right: 3rem;
     box-sizing: border-box;
+    background: linear-gradient(to right, $highlightGradientStart 0%, $highlightGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
     span {
         display: inline-block;
@@ -50,8 +70,8 @@
         position: absolute;
         top: 0;
         left: -1.5rem;
-        border-top: 1.5rem solid $highlightColor;
-        border-left: 1.5rem solid $highlightColor;
+        border-top: 1.5rem solid #ffffff;
+        border-left: 1.5rem solid #ffffff;
         border-right: 1.5rem solid transparent;
         border-bottom: 1.5rem solid transparent;
     }
@@ -60,7 +80,7 @@
         content: "";
         display: block;
         background: $highlightColor;
-        width: 2px;
+        width: 0px;
         height: 100%;
         position: absolute;
         top: 0;
@@ -77,19 +97,16 @@
 #examples {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(3rem, auto));
-    background: #ffffff;
 }
 
 #examples h2 {
     text-align: right;
-    font-family: "ltc-bodoni-175", "Times New Roman", serif;
-    font-weight: 100;
-    font-style: italic;
     font-size: 2rem;
     padding-right: 1rem;
     position: relative;
     margin-bottom: 3rem;
     clear: both;
+    color: #ffffff;
 
     &:after {
         content: "";
@@ -104,13 +121,13 @@
 
 .portfolioItem {
     display: grid;
-    grid-template-rows: 12rem 4rem;
+    grid-template-rows: 10rem 6rem;
     color: $textColor;
     text-decoration: none;
     cursor: pointer;
 
-    padding: 1rem;
-    margin: -1rem;
+    padding: 0rem 1rem;
+    margin-bottom: 2rem;
     background: #ffffff;
     position: relative;
     border-bottom: 2px solid transparent;
@@ -126,6 +143,20 @@
         box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
     }
 
+    &:before {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 100%;
+        background: #ffffff;
+        -webkit-clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(1rem 0%, 100% 0%, 100% 100%, 0% 100%);
+
+        position: absolute;
+        top: -1rem;
+        left: 0;
+    }
+
     figure {
         grid-row: 1;
         height: 100%;
@@ -137,6 +168,7 @@
         grid-row: 2;
         font-weight: 100;
         padding-top: 1rem;
+        letter-spacing: 0;
     }
 
     img {
@@ -169,24 +201,11 @@
             ". . . resume resume resume";
         grid-template-columns: repeat(6, minmax(1rem, 8rem));
         grid-gap: 1rem;
-
-        &:after {
-            content: "";
-            display: block;
-            height: 100rem;
-            width: 100rem;
-            position: absolute;
-            bottom: -80rem;
-            right: -15rem;
-            pointer-events: none;
-            // Outline
-            background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48dGl0bGU+YmFja2dyb3VuZC10cmlhbmdsZS1vdXRsaW5lPC90aXRsZT48cGF0aCBkPSJNNjkxLjA1LDBWNjkxLjA1SDBMNjkxLjA1LDBtLjI1LS42LS40My40MkwtLjE4LDY5MC44N2wtLjQyLjQzSDY5MS4zVi0uNloiLz48L3N2Zz4=");
-        }
     }
 
     #intro h1 {
         grid-area: headline;
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     }
 
     .introContent {
@@ -201,7 +220,7 @@
         grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
         grid-gap: 1rem;
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
 
     #examples h2 {
@@ -210,6 +229,23 @@
         width: calc(50% - .5rem);
         padding-right: 0;
         justify-self: end;
+    }
+
+    @supports (-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) or (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)){
+        #intro:after {
+            content: "";
+            display: block;
+            height: 100rem;
+            width: 100rem;
+            position: absolute;
+            bottom: -80rem;
+            right: -15rem;
+            pointer-events: none;
+            background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+            -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+        }
     }
 }
 
