@@ -112,6 +112,7 @@ header nav {
     grid-column: 1 / span 5;
     grid-row: 2 / span 2;
     height: 3rem;
+    z-index: 1;
 
     ul {
         list-style: none;
@@ -187,6 +188,7 @@ footer {
     color: #ffffff;
     margin-top: 4rem;
     padding-bottom: 3rem;
+    z-index: 1;
     
     a {
         color: $highlightColor;
@@ -194,10 +196,12 @@ footer {
 
     &:after {
         content: "";
-        display: block;
+        display: none;
         position: absolute;
         height: 75vw;
         width: 75vw;
+        max-width: 35rem; //Otherwise will overlap content
+        max-height: 35rem;
         right: -1rem;
         bottom: 0;
         z-index: -1;
@@ -233,6 +237,7 @@ footer p {
         height: 100%;
         width: 120%;
         margin-left: -20%;
+        z-index: 0;
 
         ul {
             height: inherit;
@@ -242,7 +247,11 @@ footer p {
 
         li {
             height: inherit;
-            width: 33.3%;
+            width: 50%;
+
+            &:first-child {
+                width: 60%;
+            }
         }
 
         a {
@@ -292,7 +301,8 @@ footer p {
         header {
             grid-template-rows: 4rem;
             grid-template-columns: minmax(5vw, auto) repeat(6, minmax(1rem, 8rem)) minmax(5vw, auto);
-            background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientStart 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientStart 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: #ffffff;
             height: 4rem;
             position: fixed;
             top: 0;
@@ -300,7 +310,7 @@ footer p {
             width: 100vw;
             overflow: hidden;
             z-index: 2;
-            transition: all .4s linear;
+            box-shadow: 0px 4px 20px darken($primaryGradientEnd, 20%);
 
             h1 {
                 grid-row: 1;
@@ -308,19 +318,40 @@ footer p {
                 transition: all .4s linear;
                 margin-left: 0;
                 margin-top: .5rem;
+
+                a {
+                    background-image: url(/assets/images/kb-logo-color-dark.svg);
+                }
+
+                &:before {
+                    display: none;
+                }
             }
 
             nav {
                 grid-row: 1;
                 grid-column: span 3 / 8;
                 margin-left: 0;
+                width: 100%;
+                margin-left: 0;
 
                 a {
-                    color: #ffffff;
+                    color: $secondaryGradientStart;
+                    background: #ffffff;
                     line-height: 6rem;
 
                     &:after {
-                        display: none;
+                        width: 2px;
+                        background: $primaryGradientStart;
+                    }
+
+                    &:hover {
+                        color: #ffffff;
+
+                        &:after {
+                            width: 100%;
+                            background: $secondaryGradientStart;
+                        }
                     }
                 }
             }
@@ -339,3 +370,30 @@ footer p {
         }
     }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 830px) {
+    header nav {
+        width: 130%;
+        margin-left: -35%;
+    }
+}
+
+// @media only screen and (min-width: 700px) and (max-width: 830px) {
+//     header {
+
+//         nav ul li:first-child {
+//             width: 40%;
+//             margin-left: -9%;
+//         }
+//     }
+// }
+
+// @media only screen and (min-width: 600px) and (max-width: 700px) {
+//     header {
+
+//         nav ul li:first-child {
+//             width: 50%;
+//             margin-left: -19%;
+//         }
+//     }
+// }
