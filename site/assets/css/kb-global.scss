@@ -12,8 +12,9 @@ $highlightGradientEnd: rgb(67, 88, 166);
 }
 
 html {
-    font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
-    font-weight: 100;
+    font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+    // font-family: phoreuscherokee;
+    font-weight: 300;
     font-size: 16px;
     line-height: 1.2em;
     width: 100%;
@@ -42,7 +43,7 @@ body {
 }
 
 a {
-    color: $highlightColor;
+    color: lighten($highlightColor, 10%);
     text-decoration: none;
 }
 
