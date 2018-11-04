@@ -195,21 +195,6 @@
             ". . . resume resume resume";
         grid-template-columns: repeat(6, minmax(1rem, 8rem));
         grid-gap: 1rem;
-
-        &:after {
-            content: "";
-            display: block;
-            height: 100rem;
-            width: 100rem;
-            position: absolute;
-            bottom: -80rem;
-            right: -15rem;
-            pointer-events: none;
-            background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
-            -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
-            clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
-        }
     }
 
     #intro h1 {
@@ -238,6 +223,23 @@
         width: calc(50% - .5rem);
         padding-right: 0;
         justify-self: end;
+    }
+
+    @supports (-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) or (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)){
+        #intro:after {
+            content: "";
+            display: block;
+            height: 100rem;
+            width: 100rem;
+            position: absolute;
+            bottom: -80rem;
+            right: -15rem;
+            pointer-events: none;
+            background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+            -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+        }
     }
 }
 

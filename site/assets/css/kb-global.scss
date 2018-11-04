@@ -82,8 +82,8 @@ header h1 {
         // background: -webkit-linear-gradient(top, rgb(240,249,255) 0%,rgb(161,219,255) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, $secondaryGradientStart 0%, $secondaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
-        -webkit-clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
-        clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+        transform-origin: 100% 0;
+        transform: skewX(135deg);
     }
 
     &:after {
@@ -97,8 +97,8 @@ header h1 {
         z-index: -1;
         clear: both;
         background: linear-gradient(to bottom, $highlightGradientStart 0%, $highlightGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        -webkit-clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
-        clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+        transform-origin: 100% 0;
+        transform: skewX(135deg);
     }
 
     a {
@@ -176,6 +176,7 @@ header nav {
 main {
     grid-column: 2 / span 6;
     grid-row: 5;
+    position: relative;
     z-index: 1;
 }
 
@@ -202,20 +203,41 @@ footer {
         width: 75vw;
         max-width: 35rem; //Otherwise will overlap content
         max-height: 35rem;
-        right: -1rem;
         bottom: 0;
         z-index: -1;
         clear: both;
         background: linear-gradient(to bottom, $primaryGradientStart 0%, $primaryGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         // background: linear-gradient(to bottom, $highlightGradientStart 0%, $highlightGradientEnd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
-        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
-        clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+        transform-origin: 100% 100%;
+        transform: skewX(135deg);
+        right: -100vw;
     }
 }
 
 footer p {
     margin: 0;
+}
+
+@supports (-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) or (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)){
+    header h1:before {
+        transform: unset;
+        -webkit-clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+    }
+
+    header h1:after {
+        transform: unset;
+        -webkit-clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+    }
+
+    footer:after {
+        right: -1rem;
+        transform: unset;
+        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+    }
 }
 
 @media only screen and (min-width: 600px) {
