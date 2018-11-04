@@ -25,6 +25,12 @@
         }
     }
 
+    p strong {
+        font-family: din-2014, sans-serif;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
     p:first-child {
         margin-top: 0;
     }
