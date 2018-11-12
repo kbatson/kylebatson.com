@@ -13,17 +13,30 @@ function initializeSlideshow(additional){
 	});
 }
 
+// function generateControls(){
+// 	$(".slideshow").each(function(i){
+// 		if(numSlides[i] > 1){
+// 			for(var j = 0; j < numSlides[i]; j++){
+// 				if(j == 0){
+// 					$(this).find(".slideshowControls").append("<a href='#' class='slideControl active' data-slide='" + j + "'>Slide " + 1 + "</a>");
+// 				} else {
+// 					$(this).find(".slideshowControls").append("<a href='#' class='slideControl' data-slide='" + j + "'>Slide " + eval(j+1) + "</a>");
+// 				}
+// 			}
+// 		}	
+// 	})
+// }
+
 function generateControls(){
-	$(".slideshow").each(function(i){
-		if(numSlides[i] > 1){
-			for(var j = 0; j < numSlides[i]; j++){
-				if(j == 0){
-					$(this).find(".slideshowControls").append("<a href='#' class='slideControl active' data-slide='" + j + "'>Slide " + 1 + "</a>");
-				} else {
-					$(this).find(".slideshowControls").append("<a href='#' class='slideControl' data-slide='" + j + "'>Slide " + eval(j+1) + "</a>");
-				}
-			}
-		}	
+	$(".slideshow").each(function(){
+		var controls = $(this).find(".slideshowControls");
+		$(this).find(".slide").each(function(j){
+			var caption = $(this).find("figcaption").text();
+			var image = $(this).find("img").clone();
+			$(controls).append("<a href='#' class='slideControl' data-slide='" + j + "' title='" + caption + "'>Slide " + eval(j+1) + "</a>");
+			// $(controls).append("<a href='#' class='slideControl' data-slide='" + j + "' title='" + caption + "'></a>");
+			// $(controls).find("a:eq(" + j + ")").append(image);
+		});
 	})
 }
 
