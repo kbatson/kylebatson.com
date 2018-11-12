@@ -4,17 +4,21 @@ var createModal = function(){
     $(overlay).appendTo("body");
     attachSlideshow();
 
+    //Accessibility
+    $(overlay).find("figure:first-child").focus();
     $(closeButton).appendTo(overlay);
     $("body").addClass("modalOpen");
+    $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "-1");
 }
 
 var closeModal = function(){
     $(overlay).remove();
     $("body").removeClass("modalOpen");
-    // $('.slideshow').each(function(i){
-    //     //slideIndex[i] = 0;
-    //     resizeSlides();
-    // });
+
+    //Accessibility
+    $("header, main, footer").attr("aria-hidden", false);
+    $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "0");
+    $("#enlarge").focus();
 }
 
 var attachImage = function(){
@@ -32,14 +36,18 @@ var attachSlideshow = function(){
 $(document).ready(function(){
 	$("#enlarge").on('click', function(){
         createModal();
-        // attachImage();
-        // attachSlideshow();
         return false;
     });
 
     $("body").on('click', '#closeModal', function(){
         closeModal();
         return false;
+    });
+
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) { // escape key maps to keycode `27`
+            closeModal();
+        }
     });
 
     // $("body.modalOpen").on({
