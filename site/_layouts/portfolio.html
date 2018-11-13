@@ -1,6 +1,18 @@
 {% include header.html %}
-<main class="portfolio">
-	<div class="slideshow">
+<main id="main" class="portfolio">
+    <h1>{{ page.title }}</h1>
+    <article>
+	    {{ content }}
+    </article>
+    <div id="skills">
+    	<h2>Skills Utilized</h2>
+	    <ul>
+	    	{% for skill in page.skills %}
+			<li>{{ skill }}</li>
+			{% endfor %}
+	    </ul>
+	</div>
+    <div class="slideshow">
 		<div class="slideshowWrapper">
 			<div class="slideshowContent">
 				{% for image in page.images %}
@@ -11,7 +23,7 @@
 				{% endfor %}
 			</div>
 		</div>
-		<nav class="slideshowDirection">
+		<nav class="slideshowDirection" aria-labeledby="slideshowNavTitle">
 			<a href="#" class="previousSlide" title="Previous Slide">
 				<span>Previous Slide</span>
 			</a>
@@ -19,37 +31,10 @@
 				<span>Next Slide</span>
 			</a>
 		</nav>
-		<nav class="slideshowControls">
-			
+		<nav class="slideshowControls" aria-labeledby="slideshowNavTitle">
+			<h4 class="at-only" id="slideshowNavTitle">Slideshow Navigation</h4>
 		</nav>
-		
+		<button id="enlarge" title="Opens slideshow in a modal window">Enlarge</button>
 	</div>
-	<button id="enlarge">Enlarge</button>
-    <h1>{{ page.title }}</h1>
-    <div id="skills">
-    	<h2>Skills Utilized</h2>
-	    <ul>
-	    	{% for skill in page.skills %}
-			<li>{{ skill }}</li>
-			{% endfor %}
-	    </ul>
-	</div>
-    <article>
-	    {{ content }}
-    </article>
-
-
-
-	<!-- <div class="portfolioItem-content">
-		<h3>{{ page.title }}</h3>
-		{{ content }}
-		<h4>Skills Utilized:</h4>
-		<ul class="portfolioSkills">
-			{% for skill in page.skills %}
-			<li>{{ skill }}</li>
-			{% endfor %}
-		</ul>
-	</div>
-	</article> -->
 </main>
 {% include footer.html %}

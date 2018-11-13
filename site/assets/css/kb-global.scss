@@ -42,6 +42,16 @@ a {
     text-decoration: none;
 }
 
+.at-only:not(:focus):not(:active) { //For accessible technology only to be hidden from regular use
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
 header {
     grid-column: 2 / span 6;
     grid-row: 2 / span 3;

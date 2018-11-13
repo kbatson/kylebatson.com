@@ -1,5 +1,5 @@
 var createModal = function(){
-    var overlay = $("<div id='overlay'><div id='overlayContents'></div></div>");
+    var overlay = $("<div id='overlay' role='dialog'><div id='overlayContents' role='document'></div></div>");
     var closeButton = $("<button id='closeModal'><span>Close</span></button>");
     $(overlay).appendTo("body");
     $("#overlay").addClass("visible").attr("aria-hidden", false);
@@ -8,7 +8,7 @@ var createModal = function(){
     $(closeButton).appendTo("#overlay");
     $(overlay).find(".slideshowControls a:first-of-type").focus();
     $("body").addClass("modalOpen");
-    $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "-1");
+    $("header, main, footer").attr("aria-hidden", true).attr("inert", true).find('a, input, textarea, button').attr("tabindex", "-1");
 }
 
 var closeModal = function(){
