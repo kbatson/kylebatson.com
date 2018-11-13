@@ -5,8 +5,8 @@ var createModal = function(){
     $("#overlay").addClass("visible").attr("aria-hidden", false);
     attachSlideshow();
 
-    $(overlay).find("figure:first-child").focus();
     $(closeButton).appendTo("#overlay");
+    $(overlay).find(".slideshowControls a:first-of-type").focus();
     $("body").addClass("modalOpen");
     $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "-1");
 }
@@ -16,8 +16,7 @@ var closeModal = function(){
     $("body").removeClass("modalOpen");
     $("#overlay").removeClass("visible").attr("aria-hidden", false);
 
-    $("header, main, footer").attr("aria-hidden", false);
-    $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "0");
+    $("header, main, footer").attr("aria-hidden", false).find('a, input, textarea, button').attr("tabindex", "0");
     $("#enlarge").focus();
 }
 
