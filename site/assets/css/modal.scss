@@ -1,4 +1,5 @@
 #overlay {
+    visibility: hidden;
     background: rgba(0,0,0,.7);
     position: fixed;
     top: 0;
@@ -15,6 +16,10 @@
         ". contents .";
     grid-template-columns: 5vw auto 5vw;
     grid-template-rows: 3rem auto 3rem;
+}
+
+#overlay.visible {
+    visibility: visible;
 }
 
 #overlayContents {

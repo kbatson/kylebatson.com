@@ -2,11 +2,11 @@ var createModal = function(){
     var overlay = $("<div id='overlay'><div id='overlayContents'></div></div>");
     var closeButton = $("<button id='closeModal'><span>Close</span></button>");
     $(overlay).appendTo("body");
+    $("#overlay").addClass("visible").attr("aria-hidden", false);
     attachSlideshow();
 
-    //Accessibility
     $(overlay).find("figure:first-child").focus();
-    $(closeButton).appendTo(overlay);
+    $(closeButton).appendTo("#overlay");
     $("body").addClass("modalOpen");
     $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "-1");
 }
@@ -14,15 +14,11 @@ var createModal = function(){
 var closeModal = function(){
     $(overlay).remove();
     $("body").removeClass("modalOpen");
+    $("#overlay").removeClass("visible").attr("aria-hidden", false);
 
-    //Accessibility
     $("header, main, footer").attr("aria-hidden", false);
     $("header, main, footer").attr("aria-hidden", true).find('a, input, textarea, button').attr("tabindex", "0");
     $("#enlarge").focus();
-}
-
-var attachImage = function(){
-    $(".activeSlide").contents().clone().appendTo("#overlayContents figure");
 }
 
 var attachSlideshow = function(){
@@ -43,6 +39,12 @@ $(document).ready(function(){
         closeModal();
         return false;
     });
+
+    $("body").on('click', '#overlay', function(e){
+        if($(e.target).attr("id") == "overlay"){
+            closeModal();
+        }
+    })
 
     $(document).keyup(function(e) {
         if (e.keyCode == 27) { // escape key maps to keycode `27`
