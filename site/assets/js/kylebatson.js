@@ -5,7 +5,7 @@ $(document).ready(function(){
 	
 	$(window).scroll(function(){
 		scrollOffset = $(window).scrollTop();
-		if(scrollOffset > 50){
+		if(scrollOffset > 100){
 			$("body").addClass("fixedHeader");
 		} else {
 			$("body").removeClass("fixedHeader");
@@ -56,4 +56,14 @@ $(document).ready(function(){
 	//** Date **//
 	var thisYear = new Date().getFullYear();
 	$("#year").html(thisYear);
+});
+
+$(window).on('scroll', function(event) {
+	console.log('scrolling');
+	$(".portfolioItem").each(function(i, el) {
+		var el = $(el);
+		if (el.visible(true)) {
+			el.addClass("animate-in"); 
+		}
+	});
 });

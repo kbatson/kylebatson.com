@@ -119,6 +119,8 @@
 }
 
 .portfolioItem {
+    opacity: 0;
+
     display: grid;
     grid-template-rows: 10rem 6rem;
     color: $textColor;
@@ -135,8 +137,7 @@
         text-decoration: none;
         border-color: $highlightColor;
         z-index: 1;
-        animation: portfolioHighlight.3s ease-in;
-        animation-fill-mode: forwards;
+        
         -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
         -moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
         box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
@@ -176,19 +177,31 @@
     }
 }
 
+.portfolioItem.animate-in {
+    transform: translateY(150px) scale(.8);
+    animation: animate-in 0.8s ease forwards;
+}
+
+.portfolioitem.animate-in:nth-child(odd) {
+    animation-duration: 0.6s; /* So they look staggered */
+}
+
+.portfolioItem.animate-in:hover {
+    transform: scale(1.2);
+    // animation: portfolioHighlight .3s ease-in;
+}
+
+@keyframes animate-in {
+    to { transform: translateY(0) scale(1); opacity: 1;}
+}
+
 
 @keyframes portfolioHighlight {
   0% {
-    top: 0;
-    background: #ffffff;
-  }
-  50% {
-    top: -.5rem;
-    // background: $highlightColor;
+    transform: translateY(0) scale(1); opacity: 1;
   }
   100% {
-    top: -1rem;
-    background: #ffffff;
+    transform: translateY(0) scale(1.2); opacity: 1;
   }
 }
 
