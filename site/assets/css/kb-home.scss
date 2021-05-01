@@ -9,10 +9,13 @@
     margin-bottom: 7rem;
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 2em;
 
         span {
-            display: inline-block;
+            display: inline;
+            white-space: nowrap;
+            
             background: #ffffff;
             color: $primaryGradientStart;
             margin-bottom: .5rem;
@@ -217,7 +220,7 @@
 
     #intro h1 {
         grid-area: headline;
-        font-size: 4.5vw;
+        font-size: 3.5vw;
     }
 
     .introContent {
