@@ -25,6 +25,7 @@ main.portfolio h1 {
     line-height: 1.2em;
     background: #ffffff;
     margin-bottom: 1rem;
+    padding-right: 1rem;
     text-align: right;
     width: 70%;
     justify-self: end;
@@ -37,12 +38,12 @@ main.portfolio h1 {
         content: "";
         display: block;
         position: absolute;
-        top: 0;
-        left: -3rem;
-        border-top: 1.5rem solid transparent;
-        border-left: 1.5rem solid transparent;
-        border-bottom: 1.5rem solid #ffffff;
-        border-right: 1.5rem solid #ffffff;
+        top: -2px;
+        left: -6rem;
+        border-top: 3rem solid transparent;
+        border-left: 3rem solid transparent;
+        border-bottom: 3rem solid #ffffff;
+        border-right: 3rem solid #ffffff;
     }
 }
 
@@ -128,6 +129,10 @@ article {
     font-size: .8em;
 
     grid-area: skills;
+    
+    li {
+        background: #ffffff;
+    }
 }
 
 @media only screen and (min-width: 600px){

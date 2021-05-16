@@ -1,5 +1,5 @@
 $textColor: #000000;
-$highlightColor: rgb(255,82,71);
+$highlightColor: rgb(231, 126, 7);
 
 * {
     // outline: 1px dotted gray;
@@ -85,7 +85,7 @@ header h1 {
         z-index: -1;
         clear: both;
         background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfNSIgZGF0YS1uYW1lPSJMYXllciA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OTEuMDUgNjkxLjA1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6Z3JheTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmJhY2tncm91bmQtdHJpYW5nbGUtZ3JleTwvdGl0bGU+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjY5MS4wNSAwIDY5MS4wNSA2OTEuMDUgMCA2OTEuMDUgNjkxLjA1IDAiLz48L3N2Zz4=");
-        filter: brightness(0.8) sepia(1) hue-rotate(-45deg) saturate(4.5);
+        filter: brightness(0.9) sepia(1) hue-rotate(-8deg) saturate(4.5);
     }
 
     a {

@@ -165,7 +165,7 @@
     #intro {
         display: grid;
         grid-template-areas:
-            "headline headline . intro intro intro"
+            "headline headline headline intro intro intro"
             ". . . resume resume resume";
         grid-template-columns: repeat(6, minmax(1rem, 8rem));
         grid-gap: 1rem;
