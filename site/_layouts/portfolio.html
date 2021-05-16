@@ -16,10 +16,16 @@
 		<div class="slideshowWrapper">
 			<div class="slideshowContent">
 				{% for image in page.images %}
-				<figure class="slide">
-					<img src="{{ image.url }}" alt="{{ image.caption }}" />
-					<figcaption>{{ image.caption }}</figcaption>
-				</figure>
+					<figure class="slide">
+						{% if image.video %}
+						<video autoplay>
+						  <source src="{{ image.url }}" type="video/mp4">
+						</video>
+						{% else %}
+						<img src="{{ image.url }}" alt="{{ image.caption }}" />
+						{% endif %}
+						<figcaption>{{ image.caption }}</figcaption>
+					</figure>
 				{% endfor %}
 			</div>
 		</div>

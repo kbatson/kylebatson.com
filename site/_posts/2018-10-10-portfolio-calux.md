@@ -14,6 +14,7 @@ images:
     caption: "UX journey map detail"
 skills:
   - "User experience design"
+  - "User research"
   - "Usability heuristics"
   - "Team management"
   - "Documentation"

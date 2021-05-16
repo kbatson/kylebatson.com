@@ -8,17 +8,14 @@ images:
     caption: "Browser-based assessment software screenshot"
   - url: /assets/images/testclient-tts.png
     caption: "Test Client text-to-speech interface"
-  - url: /assets/images/testclient-accenture1-mobile.png
-    caption: "Test Client Accenture mobile interface"
-  - url: /assets/images/testclient-accenture2.png
-    caption: "Test Client Accenture assessment interface"
   - url: /assets/images/testclient-tts-userflow.png
     caption: "Test Client text-to-speech workflow diagram"
 skills:
-  - "User Interface Design"
-  - "User Experience Design"
-  - "Mobile Design"
-  - "Front-end Development (CSS/LESS, HTML, Javascript)"
+  - "User interface design"
+  - "User experience design"
+  - "User research"
+  - "Mobile design"
+  - "Front-end development (CSS/LESS, HTML, Javascript)"
   - "Icon design"
   - "Team management"
   - "Systems analysis"
