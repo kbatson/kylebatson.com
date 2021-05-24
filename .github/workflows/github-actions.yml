@@ -26,10 +26,12 @@ jobs:
         cd site
         JEKYLL_ENV=production bundle exec jekyll build
 
-    - name: Upload site to FTP.
-      env:
-        ftp_location: ${{ secrets.ftp_location }}
-        ftp_username: ${{ secrets.ftp_username }}
-        ftp_password: ${{ secrets.ftp_password }}
-      run: |
-        ncftpput -R -v -u "$ftp_username" -p "$ftp_password" $ftp_location /domains/kylebatson.com/html site/_site/*
+    - name: Deploy with Rsync.
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr --delete
+        path: site/_site/
+        remote_path: domains/kylebatson.com/html
+        remote_host: ${{ secrets.FTP_LOCATION }}
+        remote_user: ${{ secrets.FTP_USERNAME }}
+        remote_key: ${{ secrets.DEPLOY_KEY }}
