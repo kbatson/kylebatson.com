@@ -1,7 +1,18 @@
+function workVisibility() {
+	console.log('workVisibility');
+	$(".portfolioItem").each(function(i, el) {
+		var el = $(el);
+		if (el.visible(true)) {
+			el.addClass("animate-in"); 
+		}
+	});
+}
+
 $(document).ready(function(){
-	
 	var scrollOffset = 0;
 	var scrollColor = "";
+	
+	workVisibility();
 	
 	$(window).scroll(function(){
 		scrollOffset = $(window).scrollTop();
@@ -56,14 +67,16 @@ $(document).ready(function(){
 	//** Date **//
 	var thisYear = new Date().getFullYear();
 	$("#year").html(thisYear);
+	
+	$('.portfolioItem').on('mouseover', function(){
+		$(this).removeClass('hover-out').addClass('hover-in');
+	});
+	
+	$('.portfolioItem').on('mouseout', function(){
+		$(this).removeClass('hover-in').addClass('hover-out');
+	});
 });
 
 $(window).on('scroll', function(event) {
-	console.log('scrolling');
-	$(".portfolioItem").each(function(i, el) {
-		var el = $(el);
-		if (el.visible(true)) {
-			el.addClass("animate-in"); 
-		}
-	});
+	workVisibility();
 });

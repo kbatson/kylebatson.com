@@ -7,6 +7,8 @@ $secondaryGradientEnd: rgb(80, 95, 169);
 $highlightGradientStart: rgb(77, 157, 200);
 $highlightGradientEnd: rgb(67, 88, 166);
 
+$grid-columns-body: minmax(5vw, auto) repeat(6, minmax(1rem, 8rem)) minmax(5vw, auto);
+
 html {
     font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
     font-weight: 300;
@@ -35,6 +37,7 @@ body {
     grid-template-columns: 0px repeat(6, 1fr) 0px;
     grid-template-rows: 1rem repeat(auto-fill, 3rem);
     grid-gap: 1rem;
+    overflow: hidden;
 }
 
 a {
@@ -94,9 +97,9 @@ header h1 {
         content: "";
         display: block;
         position: absolute;
-        height: 500px;
-        width: 500px;
-        left: -332px;
+        height: 1000px;
+        width: 1000px;
+        left: -832px;
         top: -7rem;
         z-index: -1;
         clear: both;
@@ -246,7 +249,7 @@ footer p {
 
 @media only screen and (min-width: 600px) {
     body {
-        grid-template-columns: minmax(5vw, auto) repeat(6, minmax(1rem, 8rem)) minmax(5vw, auto);
+        grid-template-columns: $grid-columns-body;
     }
 
     header {
@@ -313,7 +316,7 @@ footer p {
         &:before {
             top: -7rem;
             left: auto;
-            right: -13vw;
+            right: -30%;
         }
     }
 
@@ -389,10 +392,17 @@ footer p {
     }
 
     footer {
-        grid-column: 2 / span 6;
+        grid-column: 1 / -1;
+        
+        display: grid;
+        grid-template-columns: $grid-columns-body;
+        
+        .footerContent {
+            grid-column: 2 / span 6;
+        }
 
         &:after {
-            right: -25vw;
+            right: 0;
         }
     }
 }
