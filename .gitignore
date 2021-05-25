@@ -2,3 +2,5 @@ kylebatson.sublime-project
 kylebatson.sublime-workspace
 /site/.nova
 /site/.jekyll-cache
+/_site
+/.jekyll-cache
