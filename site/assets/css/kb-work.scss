@@ -26,7 +26,7 @@ article {
     grid-template-rows: repeat(auto-fill, minmax(3rem, auto));
 }
 
-#examples h2 {
+.work h1 {
     text-align: right;
     font-size: 2rem;
     padding-right: 1rem;
@@ -191,10 +191,8 @@ article {
 
         display: grid;
         grid-template-areas:
-            "headline headline slideshow slideshow"
-            "article article slideshow slideshow"
-            ". skills slideshow slideshow"
-            ". skills . .";
+            ". . article article"
+            "work work work work";
         grid-template-columns: repeat(4, calc(25% - .5rem));
         grid-template-rows: minmax(3rem, auto) auto auto;
         align-content: start;
@@ -205,12 +203,13 @@ article {
     }
 
     main article {
-        margin: -1rem 0 0 0;
+        margin: 0 0 4rem 0;
 
         grid-area: article;
     }
     
     #examples {
+        grid-area: work;
         grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
         grid-gap: 1rem;
         position: relative;
