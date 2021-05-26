@@ -7,6 +7,9 @@
 
 main {
     display: grid;
+    grid-template-areas:
+      "article"
+      "work";
     grid-gap: 1rem;
 }
 
