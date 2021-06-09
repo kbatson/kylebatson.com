@@ -24,6 +24,9 @@ fields:
   - type: text
     name: caption
     label: caption
+  - name: video
+    type: boolean
+    label: video
 - type: list
   name: skills
   label: skills
