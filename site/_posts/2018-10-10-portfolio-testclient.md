@@ -4,12 +4,18 @@ title: ETS Test Client Assessment Application
 slug: portfolio-testclient
 thumb: "/assets/images/testclient-thumb.png"
 images:
+- url: "/assets/images/testclient-tts.mp4"
+  caption: Test Client Accommodations Menu Mockup
+  video: true
 - url: "/assets/images/testclient-tools.png"
   caption: Test Client User Interface
+  video: false
 - url: "/assets/images/testclient-tts.png"
   caption: Test Client text-to-speech interface
+  video: false
 - url: "/assets/images/testclient-tts-userflow.png"
   caption: Test Client text-to-speech workflow diagram
+  video: false
 skills:
 - User interface design
 - User experience design
