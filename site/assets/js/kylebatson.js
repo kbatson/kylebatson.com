@@ -1,5 +1,4 @@
 function workVisibility() {
-	console.log('workVisibility');
 	$(".portfolioItem").each(function(i, el) {
 		var el = $(el);
 		if (el.visible(true)) {

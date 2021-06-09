@@ -18,7 +18,7 @@
 				{% for image in page.images %}
 					<figure class="slide">
 						{% if image.video %}
-						<video autoplay>
+						<video controls>
 						  <source src="{{ image.url }}" type="video/mp4">
 						</video>
 						{% else %}
