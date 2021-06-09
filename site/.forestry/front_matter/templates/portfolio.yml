@@ -1,0 +1,29 @@
+---
+label: Portfolio
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: file
+  name: thumb
+  label: thumb
+- type: field_group_list
+  name: images
+  label: images
+  fields:
+  - type: file
+    name: url
+    label: url
+  - type: text
+    name: caption
+    label: caption
+- type: list
+  name: skills
+  label: skills
