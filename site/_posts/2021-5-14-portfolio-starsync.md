@@ -6,11 +6,13 @@ thumb: "/assets/images/starsync-thumb.png"
 images:
 - url: "/assets/images/starsync-tracking.png"
   caption: Tracking interface
+  video: false
 - url: "/assets/videos/startracker.mov"
   video: true
   caption: Video of prototype showing setup workflow
 - url: "/assets/images/startracker-workflow.png"
   caption: Mapping out the setup workflow
+  video: false
 skills:
 - User interface design
 - User experience design
