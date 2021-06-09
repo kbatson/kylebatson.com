@@ -27,3 +27,5 @@ fields:
 - type: list
   name: skills
   label: skills
+pages:
+- site/_posts/2018-10-10-portfolio-testclient.md

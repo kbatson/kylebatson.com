@@ -4,7 +4,7 @@ title: ETS Test Client Assessment Application
 slug: portfolio-testclient
 thumb: "/assets/images/testclient-thumb.png"
 images:
-- url: "/assets/testclient-tools.png"
+- url: "/assets/images/testclient-tools.png"
   caption: Test Client User Interface
 - url: "/assets/images/testclient-tts.png"
   caption: Test Client text-to-speech interface
