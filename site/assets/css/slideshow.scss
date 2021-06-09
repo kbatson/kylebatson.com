@@ -35,6 +35,7 @@
 
 .slide img, .slide video {
 	max-width: 100%;
+	width: 100%;
 }
 
 .slideshowControls {
@@ -82,20 +83,20 @@
 	left: 0;
 	width: 100%;
 	height: 90%;
+	justify-content: space-between;
 }
 
 .slideshow:hover .slideshowDirection {
-	display: block;
+	display: flex;
 }
 
 .slideshowDirection a {
 	display: flex;
-	position: absolute;
 	pointer-events: all;
 	top: 0;
-	width: 25%;
-	height: 100%;
-	align-items: center;
+	height: 3rem;
+	width: 2rem;
+	align-self: center;
 	cursor: pointer;
 }
 
