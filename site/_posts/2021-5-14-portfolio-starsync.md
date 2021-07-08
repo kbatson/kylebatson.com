@@ -7,7 +7,7 @@ images:
 - url: "/assets/images/starsync-tracking.png"
   caption: Tracking interface
   video: false
-- url: "/assets/videos/startracker.mov"
+- url: "/assets/images/startracker.mov"
   video: true
   caption: Video of prototype showing setup workflow
 - url: "/assets/images/startracker-workflow.png"
